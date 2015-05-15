@@ -14,8 +14,6 @@
         **/
         'app.commons',
         'app.services',
-        'app.register',
-        'app.login',
         'app.layout',
         'app.widgets',
         /*

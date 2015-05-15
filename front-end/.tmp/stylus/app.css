@@ -1,3 +1,6 @@
+.main_ .login_ .modal-content {
+  box-shadow: none;
+}
 .header .ion-ios-home {
   font-size: 24px;
 }
@@ -34,28 +37,6 @@
   .navbar-collapse .navbar-nav.navbar-right:last-child>.dropdown:last-child>a {
     border-radius: 0;
   }
-}
-.loginUserAccount .form-control {
-  padding-left: 40px;
-}
-.loginUserAccount .form-group {
-  position: relative;
-  margin-bottom: 20px;
-}
-.loginUserAccount .form-group .col-xs-12 {
-  padding: 0;
-  margin-bottom: 20px;
-}
-.loginUserAccount .form-control + .glyphicon {
-  position: absolute;
-  left: 0;
-  padding: 10px 12px;
-}
-.loginUserAccount .modal-footer {
-  border-top: 0;
-}
-.loginUserAccount .modal-footer input {
-  width: 100%;
 }
 .register .form-control {
   padding-left: 40px;

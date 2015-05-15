@@ -52,7 +52,7 @@
     request           : require('request-promise'),
     url               : require('url'),
 
-    port              : process.env.PORT || 3000,
+    port              : process.env.PORT || 3262,
     environment       : process.env.NODE_ENV || 'development',
 
     faviconPath       : rootPath + 'front-end/resources/favicon.ico',
