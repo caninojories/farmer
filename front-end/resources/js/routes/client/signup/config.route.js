@@ -15,7 +15,7 @@
         state: 'farmer',
         config: {
           url: '/signup/farmer',
-          templateUrl: '/client/login/farmer.html',
+          templateUrl: '/client/signup/farmer.html',
           controller: 'Farmer as vm',
           title: 'Farmer'
         }
