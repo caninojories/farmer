@@ -5,17 +5,20 @@
   mongoose      = require('mongoose');
 
   var FarmerSchema = new mongoose.Schema({
+    last_name: String,
     email: {
       type: String,
       unique: true,
     },
-    password: String,
-    username: String,
-    firstName: String,
-    lastName: String,
-    googleId: String,
-    facebookId: String,
-    displayName: String
+    password    : String,
+    company_name: String,
+    address     : String,
+    city        :String,
+    state       : String,
+    zip         : String,
+    phone       : Number,
+    description : String,
+    farm_size   : Number,
   });
 
   module.exports = mongoose.model('Farmer', FarmerSchema);

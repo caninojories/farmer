@@ -4,7 +4,7 @@
   var bcrypt    = require('bcrypt-nodejs'),
   mongoose      = require('mongoose');
 
-  var FarmerSchema = new mongoose.Schema({
+  var BuyerSchema = new mongoose.Schema({
     last_name: String,
     email: {
       type: String,
@@ -21,5 +21,5 @@
     farm_size  : Number,
   });
 
-  module.exports = mongoose.model('Farmer', FarmerSchema);
+  module.exports = mongoose.model('Buyer', BuyerSchema);
 }());
