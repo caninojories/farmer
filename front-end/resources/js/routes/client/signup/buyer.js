@@ -16,46 +16,28 @@
       /*functions*/
       vm.register_buyer = register_buyer;
 
-      // vm.firstName ;
-      // vm.lastName ;
-      // vm.email ;
-      // vm.password ;
-      // vm.companyName ;
-      // vm.address ;
-      // vm.city ;
-      // vm.state ;
-      // vm.zip ;
-      // vm.phoneNum ;
-      // vm.desc ;
-      // vm.monthlyExpense ;
-      // vm.businessType ;
-
-      // function register_buyer(){
-      //   console.log('buyer')
-      // }
-
       function register_buyer(){
         $q.all([total_searchCallback()])
         .then(function(response){
-          $rootScope.totalObj = response[0].data.total;
+          console.log(response)
         }) ;
       }
       function total_searchCallback() {
         return commonsDataService
           .httpPOSTQueryParams('signup/buyer', {
-            // vm.firstName ;
-            // vm.lastName ;
-            // vm.email ;
-            // vm.password ;
-            // vm.companyName ;
-            // vm.address ;
-            // vm.city ;
-            // vm.state ;
-            // vm.zip ;
-            // vm.phone ;
-            // vm.desc ;
-            // vm.monthlyExpense ;
-            // vm.businessType ;
+            first_name : vm.first_name ;
+            last_name : vm.last_name ;
+            email : vm.email ;
+            password : vm.password ;
+            company_name : vm.company_name ;
+            address : vm.address ;
+            city : vm.city ;
+            state : vm.state ;
+            zip : vm.zip ;
+            phone : vm.phone ;
+            desc : vm.desc ;
+            monthly_expense : vm.monthly_expense ;
+            business_type : vm.business_type ;
           }, signupServiceApi)
           .then(function(response) {
             return response;

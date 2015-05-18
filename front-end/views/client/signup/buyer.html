@@ -11,7 +11,7 @@
           registerBuyerForm.firstName.$invalid && registerBuyerForm.firstName.$dirty ||
           registerBuyerForm.firstName.$invalid && registerBuyerForm.$submitted)}">
             <label class='control-label'>First Name</label>
-            <input name="firstName" class="form-control input-md" type="text" ng-model="vm.firstName" ng-minlength ="2" required/>
+            <input name="firstName" class="form-control input-md" type="text" ng-model="vm.first_name" ng-minlength ="2" required/>
             <div class='help-block' ng-show='registerBuyerForm.firstName.$dirty &&
             registerBuyerForm.firstName.$error.required '>
             First Name is required
@@ -29,7 +29,7 @@
           registerBuyerForm.lastName.$invalid && registerBuyerForm.lastName.$dirty||
           registerBuyerForm.firstName.$invalid && registerBuyerForm.$submitted)}">
             <label class='control-label'>Last Name</label>
-            <input name="lastName" class="form-control input-md" type="text" ng-model="vm.lastName" ng-minlength ="3" required/>
+            <input name="lastName" class="form-control input-md" type="text" ng-model="vm.last_name" ng-minlength ="3" required/>
             <div class='help-block' ng-show='registerBuyerForm.lastName.$dirty &&
             registerBuyerForm.lastName.$error.required'>
             Last Name is required
@@ -81,7 +81,7 @@
           </div>
           <div class="form-group" >
             <label class='control-label'>Company Name</label>
-            <input name="companyName" class="form-control" type="text" ng-model="vm.companyName"/>
+            <input name="companyName" class="form-control" type="text" ng-model="vm.company_name"/>
           </div>
           <div class="form-group" ng-class="{'has-error':(
           registerBuyerForm.address.$invalid && registerBuyerForm.address.$dirty ||
@@ -149,7 +149,7 @@
           </div>
           <div class="form-group">
             <label class="control-label">What is your current monthly expense for produce?</label>
-            <select class="form-control" ng-model="vm.monthlyExpense">
+            <select class="form-control" ng-model="vm.monthly_expense">
               <option value="" disabled selected>Select Amount</option>
               <option>1</option>
               <option>2</option>
@@ -157,7 +157,7 @@
           </div>
           <div class="form-group">
             <label class="control-label">What is your business type?</label>
-            <select class="form-control" ng-model="vm.businessType">
+            <select class="form-control" ng-model="vm.business_type">
               <option value="" disabled selected>Select Type</option>
               <option>a</option>
               <option>b</option>
