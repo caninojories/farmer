@@ -51,10 +51,10 @@
     var query = req.body;
     var error = '';
 
-    if (query.last_name === undefined || query.email === undefined || query.password === undefined ||
-      query.company_name === undefined || query.address === undefined || query.city === undefined ||
-      query.state === undefined || query.zip === undefined || query.phone === undefined ||
-      query.farm_size === undefined || query.monthly_expense === undefined || query.business_type === undefined) {
+    if (query.first_name === undefined || query.last_name === undefined || query.email === undefined ||
+      query.password === undefined || query.company_name === undefined || query.address === undefined ||
+      query.city === undefined || query.state === undefined || query.zip === undefined || query.phone === undefined ||
+      query.monthly_expense === undefined || query.business_type === undefined) {
         error += 'first_name: ' + query.first_name + '\n';
         error += 'last_name: ' + query.last_name + '\n';
         error += 'email: ' + query.email + '\n';
