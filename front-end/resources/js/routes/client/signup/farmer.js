@@ -16,18 +16,18 @@
       /*functions*/
       vm.register_farmer=register_farmer;
 
-      // vm.ffirstName ;
-      // vm.flastName ;
+      // vm.ffirst_name ;
+      // vm.flast_name ;
       // vm.femail ;
       // vm.fpassword ;
-      // vm.fcompanyName ;
+      // vm.fcompany_name ;
       // vm.faddress ;
       // vm.fcity ;
       // vm.fstate ;
       // vm.fzip ;
-      // vm.fphoneNum ;
+      // vm.fphone ;
       // vm.fdescription ;
-      // vm.ffarmsize ;
+      // vm.ffarm_size ;
 
       function register_farmer(){
         console.log('farmer');
@@ -38,21 +38,19 @@
       }
       function total_searchCallback() {
         return commonsDataService
-          .httpPOSTQueryParams('signupfarmer', {
-            firstName : vm.ffirstName,
-            lastName: vm.flastName,
+          .httpPOSTQueryParams('/signupfarmer', {
+            first_name : vm.ffirst_name,
+            last_name: vm.flast_name,
             email:vm.femail ,
             password:vm.fpassword ,
-            compName:vm.fcompanyName,
-            cddress:vm.faddress ,
+            comp_name:vm.fcompany_name,
+            address:vm.faddress ,
             city:vm.fcity ,
-            ctate:vm.fstate ,
+            state:vm.fstate ,
             zip:vm.fzip ,
-            phoneNum:vm.fphoneNum ,
+            phone:vm.fphone ,
             description:vm.fdescription ,
-            farmsize:vm.ffarmsize 
-
-
+            farm_size:vm.ffarm_size
           }, signupServiceApi)
           .then(function(response) {
             return response;

@@ -7,40 +7,40 @@
           <h4 class='modal-title'>Sign up to be a Farmer</h4>
         </div>
         <div class="modal-body">
-          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.ffirstName.$invalid &&
-                registerFarmerForm.ffirstName.$dirty) || (registerFarmerForm.ffirstName.$invalid &&
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.ffirst_name.$invalid &&
+                registerFarmerForm.ffirst_name.$dirty) || (registerFarmerForm.ffirst_name.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">First Name</label>
-            <input type="text" name="ffirstName" class="form-control input-md" placeholder="First Name" ng-model='vm.ffirstName' ng-minlength=2  required>
-            <div class='help-block' ng-show='registerFarmerForm.ffirstName.$dirty &&
-              registerFarmerForm.ffirstName.$error.required'>
+            <input type="text" name="ffirst_name" class="form-control input-md" placeholder="First Name" ng-model='vm.ffirst_name' ng-minlength=2  required>
+            <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$dirty &&
+              registerFarmerForm.ffirst_name.$error.required'>
               First Name is required
             </div>
-            <div class='help-block' ng-show='registerFarmerForm.ffirstName.$dirty &&
-              registerFarmerForm.ffirstName.$error.minlength'>
+            <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$dirty &&
+              registerFarmerForm.ffirst_name.$error.minlength'>
               First Name must be atleast 2 characters
             </div>
-            <div class='help-block' ng-show='registerFarmerForm.ffirstName.$pristine &&
-              registerFarmerForm.ffirstName.$error.required && registerFarmerForm.$submitted'>
+            <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$pristine &&
+              registerFarmerForm.ffirst_name.$error.required && registerFarmerForm.$submitted'>
               First Name is required
             </div>
           </div>
 
-          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.flastName.$invalid &&
-                registerFarmerForm.flastName.$dirty) || (registerFarmerForm.flastName.$invalid &&
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.flast_name.$invalid &&
+                registerFarmerForm.flast_name.$dirty) || (registerFarmerForm.flast_name.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Last Name</label>
-            <input type="text" name="flastName" class="form-control input-md" placeholder="First Name" ng-model='vm.flastName' ng-minlength=2  required>
-            <div class='help-block' ng-show='registerFarmerForm.flastName.$dirty &&
-              registerFarmerForm.flastName.$error.required'>
+            <input type="text" name="flast_name" class="form-control input-md" placeholder="First Name" ng-model='vm.flast_name' ng-minlength=2  required>
+            <div class='help-block' ng-show='registerFarmerForm.flast_name.$dirty &&
+              registerFarmerForm.flast_name.$error.required'>
               Last Name is required
             </div>
-            <div class='help-block' ng-show='registerFarmerForm.flastName.$dirty &&
-              registerFarmerForm.flastName.$error.minlength'>
+            <div class='help-block' ng-show='registerFarmerForm.flast_name.$dirty &&
+              registerFarmerForm.flast_name.$error.minlength'>
               Last Name must be atleast 2 characters
             </div>
-            <div class='help-block' ng-show='registerFarmerForm.flastName.$pristine &&
-              registerFarmerForm.flastName.$error.required && registerFarmerForm.$submitted'>
+            <div class='help-block' ng-show='registerFarmerForm.flast_name.$pristine &&
+              registerFarmerForm.flast_name.$error.required && registerFarmerForm.$submitted'>
               Last Name is required
             </div>
           </div>
@@ -84,7 +84,7 @@
 
           <div class="form-group" >
             <label class="control-label">Company Name </label>
-            <input type="text" name="fcompanyname" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompanyname'>
+            <input type="text" name="fcompany_name" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompanyname'>
 
           </div>
 
@@ -156,11 +156,11 @@
           </div>
           <div class="form-group">
             <label class="control-label">Farm size (planted acres)</label>
-            <input class="form-control" type="text" ng-model="vm.ffarmsize"/>
+            <input class="form-control" type="number" ng-model="vm.ffarm_size"/>
           </div class="form-group">
           <div>
             <label class="control-label">Phone Number</label>
-            <input class="form-control"  type="number" ng-model="vm.fphoneNum"/>
+            <input class="form-control"  type="number" ng-model="vm.fphone"/>
           </div>
 
 
