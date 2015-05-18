@@ -33,12 +33,12 @@
         console.log('farmer');
         $q.all([total_searchCallback()])
           .then(function(response) {
-            $rootScope.totalObj = response[0].data.total;
+            console.log(response);
           });
       }
       function total_searchCallback() {
         return commonsDataService
-          .httpPOSTQueryParams('/signupfarmer', {
+          .httpPOSTQueryParams('signup/farmer', {
             first_name : vm.ffirst_name,
             last_name: vm.flast_name,
             email:vm.femail ,
