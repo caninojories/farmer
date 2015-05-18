@@ -70,22 +70,31 @@
             <input type="password" name="fpassword" class="form-control input-md" placeholder="Password" ng-model='vm.fpassword' ng-minlength=8  required>
             <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
               registerFarmerForm.fpassword.$error.required'>
-              Password is required
-            </div>
-            <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
-              registerFarmerForm.fpassword.$error.minlength'>
-              Last Name must be atleast 8 characters
+              Company name is required
             </div>
             <div class='help-block' ng-show='registerFarmerForm.fpassword.$pristine &&
               registerFarmerForm.fpassword.$error.required && registerFarmerForm.$submitted'>
-              Password is required
+              Company name is required
             </div>
           </div>
 
-          <div class="form-group" >
-            <label class="control-label">Company Name </label>
-            <input type="text" name="fcompany_name" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompanyname'>
-
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fcompany_name.$invalid &&
+                registerFarmerForm.fcompany_name.$dirty) || (registerFarmerForm.fcompany_name.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">Password</label>
+            <input type="text" name="fcompany_name" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompany_name' ng-minlength=8  required>
+            <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$dirty &&
+              registerFarmerForm.fcompany_name.$error.required'>
+              Password is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$dirty &&
+              registerFarmerForm.fcompany_name.$error.minlength'>
+              Last Name must be atleast 8 characters
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$pristine &&
+              registerFarmerForm.fcompany_name.$error.required && registerFarmerForm.$submitted'>
+              Password is required
+            </div>
           </div>
 
 
@@ -159,7 +168,7 @@
                 registerFarmerForm.ffarm_size.$dirty) || (registerFarmerForm.ffarm_size.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Farm size (planted acres)</label>
-            <input type="text" name="ffarm_size" class="form-control input-md" placeholder="Farm size" ng-model='vm.ffarm_size' required>
+            <input type="number" name="ffarm_size" class="form-control input-md" placeholder="Farm size" ng-model='vm.ffarm_size' required>
             <div class='help-block' ng-show='registerFarmerForm.ffarm_size.$dirty &&
               registerFarmerForm.ffarm_size.$error.required'>
               Farm size is required
@@ -179,10 +188,6 @@
             <div class='help-block' ng-show='registerFarmerForm.fphone.$dirty &&
               registerFarmerForm.fphone.$error.required'>
               Phone number is required
-            </div>
-            <div class='help-block' ng-show='registerFarmerForm.fphone.$dirty &&
-              registerFarmerForm.fphone.$error'>
-              Invalid phone number
             </div>
             <div class='help-block' ng-show='registerFarmerForm.fphone.$pristine &&
               registerFarmerForm.fphone.$error.required && registerFarmerForm.$submitted'>

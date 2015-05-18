@@ -16,6 +16,18 @@
       /*functions*/
       vm.register_farmer=register_farmer;
 
+      // vm.ffirst_name ;
+      // vm.flast_name ;
+      // vm.femail ;
+      // vm.fpassword ;
+      // vm.fcompany_name ;
+      // vm.faddress ;
+      // vm.fcity ;
+      // vm.fstate ;
+      // vm.fzip ;
+      // vm.fphone ;
+      // vm.fdescription ;
+      // vm.ffarm_size ;
 
       function register_farmer(){
         console.log('farmer');
@@ -31,7 +43,7 @@
             last_name: vm.flast_name,
             email:vm.femail ,
             password:vm.fpassword ,
-            comp_name:vm.fcompany_name,
+            company_name:vm.fcompany_name,
             address:vm.faddress ,
             city:vm.fcity ,
             state:vm.fstate ,
