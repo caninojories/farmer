@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.login')
+    .module('app.signup')
     .run(appRun);
 
     appRun.$inject = ['routehelper'];
@@ -23,7 +23,7 @@
           state: 'buyer',
           config: {
             url: '/signup/buyer',
-            templateUrl: '/client/login/buyer.html',
+            templateUrl: '/client/signup/buyer.html',
             controller: 'Buyer as vm',
             title: 'Buyer'
           }
