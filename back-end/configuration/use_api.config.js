@@ -9,6 +9,7 @@
     var use_api_client = {
         login   : require(routes_api_client + 'login'),
         register: require(routes_api_client + 'register'),
+        signup  : require(routes_api_client + 'signup'),
         user    : require(routes_api_client + 'user')
     };
     return useApi([{
@@ -20,6 +21,9 @@
     }, {
       name: '/userApi',
       url: use_api_client.user
+    }, {
+      name: '/signupApi',
+      url: use_api_client.signup
     }]);
 
     function useApi(param) {

@@ -20,6 +20,7 @@
     get               : require(service + './get'),
     googleAuth        : require(service + './googleAuth'),
     User              : require('../model/User'),
+    Farmer            : require('../model/Farmer'),
     mongoDB           : require('../configuration/mongodb'),
     xPoweredBy        : require(service + './xPoweredBy'),
     use_app           : require('./use_app.config'),
