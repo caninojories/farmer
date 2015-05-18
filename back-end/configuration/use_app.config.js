@@ -5,13 +5,13 @@
     var clientRoutes    = io.rootPath + 'back-end/html_routes/client/',
         use_app_client  = {
           main     : require(clientRoutes + 'main'),
-          login    : require(clientRoutes + 'login'),
+          signup   : require(clientRoutes + 'signup'),
           sample   : require(clientRoutes + 'sample'),
         };
 
     return useApp([
       use_app_client.main,
-      use_app_client.login,
+      use_app_client.signup,
       use_app_client.sample
     ]);
 
