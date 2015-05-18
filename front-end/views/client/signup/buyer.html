@@ -2,11 +2,11 @@
 <div class="main_">
   <div class="modal-dialog login_">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class='modal-title'>Sign up to be a buyer</h4>
-      </div>
-      <div class="modal-body">
-        <form>
+      <form name="registerCustomer" ng-submit="vm.register_buyer()">
+        <div class="modal-header">
+          <h4 class='modal-title'>Sign up to be a buyer</h4>
+        </div>
+        <div class="modal-body">
           <div class="form-group">
             <label class='control-label'>First Name</label>
             <input class="form-control" type="text" ng-model="vm.firstName"/>
@@ -49,7 +49,7 @@
           </div>
           <div>
             <label class="control-label">Description (Optional)</label>
-            <textarea class="form-control" type="text" ng-model="vm.description"/>
+            <textarea class="form-control" type="text" ng-model="vm.desc"/>
           </div>
           <div>
             <label class="control-label">What is your current monthly expense for produce?</label>
@@ -60,21 +60,21 @@
           </div>
           <div>
             <label class="control-label">What is your business type?</label>
-            <select class="form-control" ng-model="vm.monthlyExpense">
+            <select class="form-control" ng-model="vm.businessType">
               <option>a</option>
               <option>b</option>
             </select>
           </div>
-        </form>
-      </div>
-      <div class='modal-footer'>
-        <div class="text-center">
-          <input type='submit' class='btn btn-primary text-center' value='Sign up'>
         </div>
-        <div class="row" style="margin-top: 60px;">
-          <p class="text-center">Already a member? <a href="">Sign in</a></p>
+        <div class='modal-footer'>
+          <div class="text-center">
+            <button type='submit' class='btn btn-primary text-center'>Sign up</button>
+          </div>
+          <div class="row" style="margin-top: 60px;">
+            <p class="text-center">Already a member? <a href="">Sign in</a></p>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
