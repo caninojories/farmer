@@ -5,6 +5,7 @@
   mongoose      = require('mongoose');
 
   var FarmerSchema = new mongoose.Schema({
+    firt_name: String,
     last_name: String,
     email: {
       type: String,
