@@ -2,11 +2,11 @@
 <div class="main_">
   <div class="modal-dialog login_">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class='modal-title'>Sign up to be a buyer</h4>
-      </div>
-      <div class="modal-body">
-        <form name="registerCustomer" ng-submit="vm.registerCustomer(registerCustomer)">
+      <form name="registerCustomer" ng-submit="vm.register_buyer()">
+        <div class="modal-header">
+          <h4 class='modal-title'>Sign up to be a buyer</h4>
+        </div>
+        <div class="modal-body">
           <div class="form-group">
             <label class='control-label'>First Name</label>
             <input class="form-control" type="text" ng-model="vm.firstName"/>
@@ -65,19 +65,16 @@
               <option>b</option>
             </select>
           </div>
+        </div>
+        <div class='modal-footer'>
           <div class="text-center">
-            <input type='submit' class='btn btn-primary btn-block btn-md'>Register</button>
+            <button type='submit' class='btn btn-primary text-center'>Sign up</button>
           </div>
-        </form>
-      </div>
-      <div class='modal-footer'>
-        <div class="text-center">
-          <input type='submit' class='btn btn-primary text-center' value='Sign up'>
+          <div class="row" style="margin-top: 60px;">
+            <p class="text-center">Already a member? <a href="">Sign in</a></p>
+          </div>
         </div>
-        <div class="row" style="margin-top: 60px;">
-          <p class="text-center">Already a member? <a href="">Sign in</a></p>
-        </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

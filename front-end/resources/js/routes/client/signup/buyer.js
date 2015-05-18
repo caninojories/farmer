@@ -11,6 +11,11 @@
     function Buyer($rootScope, commonsDataService) {
       var vm = this;
 
+      /*literals*/
+
+      /*functions*/
+      vm.register_buyer = register_buyer;
+
       // vm.firstName ;
       // vm.lastName ;
       // vm.email ;
@@ -25,8 +30,8 @@
       // vm.monthlyExpense ;
       // vm.businessType ;
 
-      function registerCustomer(customer){
-
+      function register_buyer(){
+        console.log('buyer')
       }
 
     }
