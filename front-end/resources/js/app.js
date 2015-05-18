@@ -22,7 +22,7 @@
          */
         //'app.avengers',
         'app.main',
-        'app.login',
+        'app.signup',
         'app.sample',
     ]);
 })();

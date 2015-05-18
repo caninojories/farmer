@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.login')
+    .module('app.signup')
     .controller('Farmer', Farmer);
 
     Farmer.$inject = ['$rootScope'];
