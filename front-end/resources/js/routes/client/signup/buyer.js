@@ -37,7 +37,7 @@
             phone : vm.phone ,
             desc : vm.desc ,
             monthly_expense : vm.monthly_expense ,
-            business_type : vm.business_type 
+            business_type : vm.business_type
           }, signupServiceApi)
           .then(function(response) {
             return response;
