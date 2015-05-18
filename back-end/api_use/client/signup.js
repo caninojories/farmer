@@ -7,5 +7,8 @@
     app.route('/signup/farmer')
       .post(signup.farmer);
 
+    app.route('/signup/buyer')
+      .post(signup.buyer);
+
   module.exports = app;
 }());
