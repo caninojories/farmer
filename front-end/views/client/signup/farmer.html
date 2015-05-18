@@ -2,11 +2,11 @@
 <div class="main_">
   <div class="modal-dialog login_">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class='modal-title'>Sign up to be a Farmer</h4>
-      </div>
-      <div class="modal-body">
-        <form name="registerFarmerForm" ng-submit="vm.registerFarmerForm(registerFarmerForm)" novalidate>
+      <form name="registerFarmerForm" ng-submit="vm.register_farmer()" novalidate>
+        <div class="modal-header">
+          <h4 class='modal-title'>Sign up to be a Farmer</h4>
+        </div>
+        <div class="modal-body">
           <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.ffirstName.$invalid &&
                 registerFarmerForm.ffirstName.$dirty) || (registerFarmerForm.ffirstName.$invalid &&
                 registerFarmerForm.$submitted)}">
@@ -84,7 +84,7 @@
 
           <div class="form-group" >
             <label class="control-label">Company Name </label>
-            <input type="text" name="fcompanyname" class="form-control input-md" placeholder="Password" ng-model='vm.fcompanyname'>
+            <input type="text" name="fcompanyname" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompanyname'>
 
           </div>
 
@@ -160,21 +160,22 @@
           </div class="form-group">
           <div>
             <label class="control-label">Phone Number</label>
-            <input class="form-control"  type="number" ng-model="vm.fphonenum"/>
+            <input class="form-control"  type="number" ng-model="vm.fphoneNum"/>
           </div>
 
 
-      </div>
-      <div class='modal-footer'>
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary btn-block btn-md">Register</button>
+        </div>
+        <div class='modal-footer'>
+          <div class="text-center">
+            <button type='submit' class='btn btn-primary text-center'>Sign up</button>
+          </div>
 
+          <div class="row" style="margin-top: 60px;">
+            <p class="text-center">Already a member? <a href="">Sign in</a></p>
+          </div>
         </div>
-        <div class="row" style="margin-top: 60px;">
-          <p class="text-center">Already a member? <a href="">Sign in</a></p>
-        </div>
+
       </div>
-        </form>
-    </div>
+    </form>
   </div>
 </div>
