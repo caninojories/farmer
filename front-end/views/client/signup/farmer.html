@@ -154,13 +154,40 @@
             <label class="control-label">Description (optional)</label>
             <textarea class="form-control" ng-model="vm.fdescription"></textarea>
           </div>
-          <div class="form-group">
+
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.ffarm_size.$invalid &&
+                registerFarmerForm.ffarm_size.$dirty) || (registerFarmerForm.ffarm_size.$invalid &&
+                registerFarmerForm.$submitted)}">
             <label class="control-label">Farm size (planted acres)</label>
-            <input class="form-control" type="number" ng-model="vm.ffarm_size"/>
-          </div class="form-group">
-          <div>
+            <input type="text" name="ffarm_size" class="form-control input-md" placeholder="Farm size" ng-model='vm.ffarm_size' required>
+            <div class='help-block' ng-show='registerFarmerForm.ffarm_size.$dirty &&
+              registerFarmerForm.ffarm_size.$error.required'>
+              Farm size is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.ffarm_size.$pristine &&
+              registerFarmerForm.ffarm_size.$error.required && registerFarmerForm.$submitted'>
+              Farm size is required
+            </div>
+          </div>
+
+
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fphone.$invalid &&
+                registerFarmerForm.fphone.$dirty) || (registerFarmerForm.fphone.$invalid &&
+                registerFarmerForm.$submitted)}">
             <label class="control-label">Phone Number</label>
-            <input class="form-control"  type="number" ng-model="vm.fphone"/>
+            <input type="number" name="fphone" class="form-control input-md" placeholder="Phone Number" ng-model='vm.fphone' required>
+            <div class='help-block' ng-show='registerFarmerForm.fphone.$dirty &&
+              registerFarmerForm.fphone.$error.required'>
+              Phone number is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fphone.$dirty &&
+              registerFarmerForm.fphone.$error'>
+              Invalid phone number
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fphone.$pristine &&
+              registerFarmerForm.fphone.$error.required && registerFarmerForm.$submitted'>
+              Phone number is required
+            </div>
           </div>
 
 
