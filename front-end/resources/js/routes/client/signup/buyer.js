@@ -42,7 +42,21 @@
       }
       function total_searchCallback() {
         return commonsDataService
-          .httpPOSTQueryParams('signup/buyer', {}, signupServiceApi)
+          .httpPOSTQueryParams('signup/buyer', {
+            // vm.firstName ;
+            // vm.lastName ;
+            // vm.email ;
+            // vm.password ;
+            // vm.companyName ;
+            // vm.address ;
+            // vm.city ;
+            // vm.state ;
+            // vm.zip ;
+            // vm.phone ;
+            // vm.desc ;
+            // vm.monthlyExpense ;
+            // vm.businessType ;
+          }, signupServiceApi)
           .then(function(response) {
             return response;
           });
