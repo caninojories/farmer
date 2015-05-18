@@ -8,12 +8,26 @@
     commonsDataService.$inject = ['authToken',  'exception', 'Restangular', 'userInfoServiceApi'];
 
     /* @ngInject */
-    function commonsDataService(authToken, exception, Restangular, userInfoServiceApi ) {
+    function commonsDataService(authToken, exception, Restangular, userInfoServiceApi) {
       var service = {
+        httpGETQueryParams    : httpGETQueryParams,
         authorize : authorize,
         checkEmail: checkEmail
       };
       return service;
+
+      function httpGETQueryParams(api, queryParam, apiService) {
+        return apiService.one(api)
+          .get(queryParam)
+          .then(httpGETQueryParamsCallback)
+          .catch(function(message) {
+
+          });
+
+        function httpGETQueryParamsCallback(response, status, header, config) {
+          return Restangular.stripRestangular(response);
+        }
+      }
 
       function authorize() {
         var token = authToken.getToken();

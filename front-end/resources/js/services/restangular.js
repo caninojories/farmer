@@ -1,12 +1,13 @@
 (function() {
   'use strict';
 
-  angular.module('app.services')
-  .factory('userInfoServiceApi', userInfoServiceApi);
-
-  userInfoServiceApi.$inject = ['Restangular'];
-
-  function userInfoServiceApi(Restangular) {
-    return Restangular.all('userApi');
-  }
+  angular.module('app.services', [])
+  /*ngInject*/
+  .factory('signupServiceApi', ['Restangular', function (Restangular) {
+    return Restangular.all('signupApi');
+  }])
+  /*ngInject*/
+  .factory('userInfoServiceApi', ['Restangular', function (Restangular) {
+    return Restangular.all('userInfoApi');
+  }]);
 }());
