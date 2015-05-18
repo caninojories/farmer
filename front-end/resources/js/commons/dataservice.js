@@ -11,6 +11,7 @@
     function commonsDataService(authToken, exception, Restangular, userInfoServiceApi) {
       var service = {
         httpGETQueryParams    : httpGETQueryParams,
+        httpPOSTQueryParams   : httpPOSTQueryParams,
         authorize : authorize,
         checkEmail: checkEmail
       };
@@ -25,6 +26,23 @@
           });
 
         function httpGETQueryParamsCallback(response, status, header, config) {
+          return Restangular.stripRestangular(response);
+        }
+      }
+
+      function httpPOSTQueryParams(api, param, apiService) {
+        return apiService.all(api)
+          .post(param)
+          .then(httpPOSTQueryParamsCallback)
+          .catch(function(message) {
+            /***
+            ** Call the exception factory to show the error in the client for Development
+            ** then wait for 5 seconds then redirect
+            ***/
+            exception.catcher('Error in saving the Farmers Data', message);
+          });
+
+        function httpPOSTQueryParamsCallback(response, status, header, config) {
           return Restangular.stripRestangular(response);
         }
       }
