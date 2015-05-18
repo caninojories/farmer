@@ -2,41 +2,180 @@
 <div class="main_">
   <div class="modal-dialog login_">
     <div class="modal-content">
-      <div class="modal-header">
-        <h4 class='modal-title'>Sign up to be a farmer</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group">
-            <label class='control-label'>First Name</label>
-            <input class="form-control"/>
-          </div>
-          <div class="form-group">
-            <label class='control-label'>Last Name</label>
-            <input class="form-control" type="text"/>
-          </div>
-          <div class="form-group">
-            <label class='control-label'>Email</label>
-            <input class="form-control" type="email"/>
-          </div>
-          <div class="form-group">
-            <label class='control-label'>Password</label>
-            <input class="form-control" type="text"/>
-          </div>
-          <div class="form-group">
-            <label class='control-label'>Company Name</label>
-            <input class="form-control" type="text"/>
-          </div>
-        </form>
-      </div>
-      <div class='modal-footer'>
-        <div class="text-center">
-          <input type='submit' class='btn btn-primary text-center' value='Sign up'>
+      <form name="registerFarmerForm" ng-submit="vm.register_farmer()" novalidate>
+        <div class="modal-header">
+          <h4 class='modal-title'>Sign up to be a Farmer</h4>
         </div>
-        <div class="row" style="margin-top: 60px;">
-          <p class="text-center">Already a member? <a href="">Sign in</a></p>
+        <div class="modal-body">
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.ffirst_name.$invalid &&
+                registerFarmerForm.ffirst_name.$dirty) || (registerFarmerForm.ffirst_name.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">First Name</label>
+            <input type="text" name="ffirst_name" class="form-control input-md" placeholder="First Name" ng-model='vm.ffirst_name' ng-minlength=2  required>
+            <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$dirty &&
+              registerFarmerForm.ffirst_name.$error.required'>
+              First Name is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$dirty &&
+              registerFarmerForm.ffirst_name.$error.minlength'>
+              First Name must be atleast 2 characters
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$pristine &&
+              registerFarmerForm.ffirst_name.$error.required && registerFarmerForm.$submitted'>
+              First Name is required
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.flast_name.$invalid &&
+                registerFarmerForm.flast_name.$dirty) || (registerFarmerForm.flast_name.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">Last Name</label>
+            <input type="text" name="flast_name" class="form-control input-md" placeholder="First Name" ng-model='vm.flast_name' ng-minlength=2  required>
+            <div class='help-block' ng-show='registerFarmerForm.flast_name.$dirty &&
+              registerFarmerForm.flast_name.$error.required'>
+              Last Name is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.flast_name.$dirty &&
+              registerFarmerForm.flast_name.$error.minlength'>
+              Last Name must be atleast 2 characters
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.flast_name.$pristine &&
+              registerFarmerForm.flast_name.$error.required && registerFarmerForm.$submitted'>
+              Last Name is required
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.femail.$invalid &&
+                registerFarmerForm.femail.$dirty) || (registerFarmerForm.femail.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">Email</label>
+            <input type="email" name="femail" class="form-control input-md" placeholder="Email" ng-model='vm.femail' required>
+            <div class='help-block' ng-show='registerFarmerForm.femail.$dirty &&
+              registerFarmerForm.femail.$error.required'>
+              Email is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.femail.$dirty && registerFarmerForm.femail.$error.email'>
+              Invalid email address
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.femail.$pristine &&
+              registerFarmerForm.femail.$error.required && registerFarmerForm.$submitted'>
+              Email is required
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fpassword.$invalid &&
+                registerFarmerForm.fpassword.$dirty) || (registerFarmerForm.fpassword.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">Password</label>
+            <input type="password" name="fpassword" class="form-control input-md" placeholder="Password" ng-model='vm.fpassword' ng-minlength=8  required>
+            <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
+              registerFarmerForm.fpassword.$error.required'>
+              Password is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
+              registerFarmerForm.fpassword.$error.minlength'>
+              Last Name must be atleast 8 characters
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fpassword.$pristine &&
+              registerFarmerForm.fpassword.$error.required && registerFarmerForm.$submitted'>
+              Password is required
+            </div>
+          </div>
+
+          <div class="form-group" >
+            <label class="control-label">Company Name </label>
+            <input type="text" name="fcompany_name" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompanyname'>
+
+          </div>
+
+
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.faddress.$invalid &&
+                registerFarmerForm.faddress.$dirty) || (registerFarmerForm.faddress.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">Address</label>
+            <input type="text" name="faddress" class="form-control input-md" placeholder="Address" ng-model='vm.faddress' required>
+            <div class='help-block' ng-show='registerFarmerForm.faddress.$dirty &&
+              registerFarmerForm.faddress.$error.required'>
+              Address is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.faddress.$pristine &&
+              registerFarmerForm.faddress.$error.required && registerFarmerForm.$submitted'>
+              Address is required
+            </div>
+          </div>
+
+
+          <div class="col-lg-4" ng-class="{ 'has-error' : (registerFarmerForm.fcity.$invalid &&
+                registerFarmerForm.fcity.$dirty) || (registerFarmerForm.fcity.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">City</label>
+            <input type="text" name="fcity" class="form-control input-md" placeholder="City" ng-model='vm.fcity' required>
+            <div class='help-block' ng-show='registerFarmerForm.fcity.$dirty &&
+              registerFarmerForm.fcity.$error.required'>
+              City is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fcity.$pristine &&
+              registerFarmerForm.fcity.$error.required && registerFarmerForm.$submitted'>
+              City is required
+            </div>
+          </div>
+
+          <div class="col-lg-4" ng-class="{ 'has-error' : (registerFarmerForm.fstate.$invalid &&
+                registerFarmerForm.fstate.$dirty) || (registerFarmerForm.fstate.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">State</label>
+            <input type="text" name="fstate" class="form-control input-md" placeholder="State" ng-model='vm.fstate' required>
+            <div class='help-block' ng-show='registerFarmerForm.fstate.$dirty &&
+              registerFarmerForm.fstate.$error.required'>
+              State is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fstate.$pristine &&
+              registerFarmerForm.fstate.$error.required && registerFarmerForm.$submitted'>
+              State is required
+            </div>
+          </div>
+
+          <div class="col-lg-4" ng-class="{ 'has-error' : (registerFarmerForm.fzip.$invalid &&
+                registerFarmerForm.fzip.$dirty) || (registerFarmerForm.fzip.$invalid &&
+                registerFarmerForm.$submitted)}">
+            <label class="control-label">Zip</label>
+            <input type="text" name="fzip" class="form-control input-md" placeholder="Address" ng-model='vm.fzip' required>
+            <div class='help-block' ng-show='registerFarmerForm.fzip.$dirty &&
+              registerFarmerForm.fzip.$error.required'>
+              Zip is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fzip.$pristine &&
+              registerFarmerForm.fzip.$error.required && registerFarmerForm.$submitted'>
+              Zip is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label">Description (optional)</label>
+            <textarea class="form-control" ng-model="vm.fdescription"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Farm size (planted acres)</label>
+            <input class="form-control" type="number" ng-model="vm.ffarm_size"/>
+          </div class="form-group">
+          <div>
+            <label class="control-label">Phone Number</label>
+            <input class="form-control"  type="number" ng-model="vm.fphone"/>
+          </div>
+
+
         </div>
+        <div class='modal-footer'>
+          <div class="text-center">
+            <button type='submit' class='btn btn-primary text-center'>Sign up</button>
+          </div>
+
+          <div class="row" style="margin-top: 60px;">
+            <p class="text-center">Already a member? <a href="">Sign in</a></p>
+          </div>
+        </div>
+
       </div>
-    </div>
+    </form>
   </div>
 </div>
