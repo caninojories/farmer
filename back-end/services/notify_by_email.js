@@ -1,9 +1,9 @@
 (function() {
   'use strict';
 
-  exports.verify = function(node, email, res) {
+  module.exports = function(node, email, res) {
     var model = {
-      // verifyEmail : 'https://hauangelite.herokuapp.com/user/verify/',
+      verifyEmail : 'https://hauangelite.herokuapp.com/user/verify/',
       title       : 'NOTIFY',
       subTitle    : 'Verifying your credentials',
       body        : 'Our team is verifying your credentials.. Please wait for confirmation'
@@ -13,7 +13,7 @@
         service: 'Gmail',
         auth: {
           user: 'caninojories@gmail.com',
-          pass: 'Ver0nicavilla'
+          pass: 'Ver0nicavilla_'
         }
     });
 
@@ -29,7 +29,10 @@
     };
 
     transporter.sendMail(mailOptions, function(err, info) {
-      if(err) {return err;}
+      if(err) {
+        console.log(err);
+        return err;
+      }
       console.log('email sent ' + info.response);
       res.json('success');
     });

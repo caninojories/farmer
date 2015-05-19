@@ -11,6 +11,8 @@
   module.exports = {
 
     rootPath          : rootPath,
+    path              : path,
+    fs                : require('fs'),
     authorize         : require(service + 'authorize'),
     clusterService    : require(service + './cluster'),
     config            : require('./settings.config'),
