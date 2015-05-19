@@ -5,11 +5,13 @@
     .module('app.main')
     .controller('Main', Main);
 
-    Main.$inject = ['$rootScope', 'commonsDataService'/*, '$q'*/];
+    Main.$inject = ['$location', '$rootScope', '$state','commonsDataService'/*, '$q'*/];
 
     /* @ngInject */
-    function Main($rootScope, commonsDataService ) {/*commonsDataService, $q*/
+    function Main($location, $rootScope, $state, commonsDataService ) {/*commonsDataService, $q*/
       var vm = this;
+
+      vm.login = login;
 
 
       // function login(){
@@ -29,9 +31,6 @@
       // }
       function login(){
         console.log("login called")
-      }
-      function register(){
-        console.log("register")
-      }
+      }1
     }
 }());
