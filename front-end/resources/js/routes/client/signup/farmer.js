@@ -43,7 +43,7 @@
             last_name: vm.flast_name,
             email:vm.femail ,
             password:vm.fpassword ,
-            comp_name:vm.fcompany_name,
+            company_name:vm.fcompany_name,
             address:vm.faddress ,
             city:vm.fcity ,
             state:vm.fstate ,
