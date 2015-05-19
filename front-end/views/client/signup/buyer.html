@@ -71,7 +71,7 @@
             Password is required
             </div>
             <div class='help-block' ng-show='registerBuyerForm.password.$pristine &&
-            registerBuyerForm.password.$error.required'>
+            registerBuyerForm.password.$error.required && registerBuyerForm.$submitted'>
             Password is required
             </div>
             <div class='help-block' ng-show='registerBuyerForm.password.$dirty &&
@@ -89,9 +89,9 @@
             Company name is required
             </div>
             <div class='help-block' ng-show='registerBuyerForm.companyName.$pristine &&
-            registerBuyerForm.companyName.$error.required'>
+            registerBuyerForm.companyName.$error.required && registerBuyerForm.$submitted'>
             Company name is required
-          </div>companyName
+          </div>
           </div>
           <div class="form-group" ng-class="{'has-error':(
           registerBuyerForm.address.$invalid && registerBuyerForm.address.$dirty ||
@@ -107,7 +107,8 @@
             Address is required
             </div>
           </div>
-            <div class="col-lg-5 form-group" ng-class="{'has-error':(
+          <div>
+            <div class="col-md-5 form-group" ng-class="{'has-error':(
             registerBuyerForm.city.$invalid && registerBuyerForm.city.$dirty ||
             registerBuyerForm.city.$invalid && registerBuyerForm.$submitted)}">
               <label class="control-label">City</label>
@@ -121,7 +122,7 @@
               City is required
               </div>
             </div>
-            <div class="col-lg-3 form-group" ng-class="{'has-error':(
+            <div class="col-md-3 form-group" ng-class="{'has-error':(
             registerBuyerForm.state.$invalid && registerBuyerForm.state.$dirty ||
             registerBuyerForm.state.$invalid && registerBuyerForm.$submitted)}">
               <label class="control-label">State</label>
@@ -135,7 +136,7 @@
               State is required
               </div>
             </div>
-            <div class="col-lg-4 form-group" ng-class="{'has-error':(
+            <div class="col-md-4 form-group" ng-class="{'has-error':(
             registerBuyerForm.zip.$invalid && registerBuyerForm.zip.$dirty ||
             registerBuyerForm.zip.$invalid && registerBuyerForm.$submitted)}">
               <label class="control-label">Zip</label>
@@ -149,18 +150,23 @@
               Zip is required
               </div>
             </div>
+          </div>
           <div class="form-group" ng-class="{'has-error':(
           registerBuyerForm.phone.$invalid && registerBuyerForm.phone.$dirty ||
           registerBuyerForm.phone.$invalid && registerBuyerForm.$submitted)}">
             <label class="control-label">Phone Number</label>
-            <input name ="phone" class="form-control" type="number" ng-model="vm.phone" required/>
+            <input name ="phone" class="form-control" type="text" ng-model="vm.phone" ng-pattern="/^\d*$/" required/>
             <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
-            registerBuyerForm.phone.$error.required && registerBuyerForm.$submitted'>
+            registerBuyerForm.phone.$error.required'>
             Phone number is required
             </div>
             <div class='help-block' ng-show='registerBuyerForm.phone.$pristine &&
             registerBuyerForm.phone.$error.required && registerBuyerForm.$submitted'>
             Phone number is required
+            </div>
+            <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
+            registerBuyerForm.phone.$invalid'>
+            Must enter numeric characters
             </div>
           </div>
           <div class="form-group">
@@ -196,11 +202,11 @@
             </select>
             <div class='help-block' ng-show='registerBuyerForm.businessType.$dirty &&
             registerBuyerForm.businessType.$error.required'>
-            Please select monthly expense
+            Please select business type
             </div>
             <div class='help-block' ng-show='registerBuyerForm.businessType.$pristine &&
             registerBuyerForm.businessType.$error.required && registerBuyerForm.$submitted'>
-            Please select monthly expense
+            Please select business type
             </div>
           </div>
         </div>
