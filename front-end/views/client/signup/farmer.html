@@ -11,7 +11,7 @@
                 registerFarmerForm.ffirst_name.$dirty) || (registerFarmerForm.ffirst_name.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">First Name</label>
-            <input type="text" name="ffirst_name" class="form-control input-md" placeholder="First Name" ng-model='vm.ffirst_name' ng-minlength=2  required>
+            <input type="text" name="ffirst_name" class="form-control input-md"  ng-model='vm.ffirst_name' ng-minlength=2  required>
             <div class='help-block' ng-show='registerFarmerForm.ffirst_name.$dirty &&
               registerFarmerForm.ffirst_name.$error.required'>
               First Name is required
@@ -30,7 +30,7 @@
                 registerFarmerForm.flast_name.$dirty) || (registerFarmerForm.flast_name.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Last Name</label>
-            <input type="text" name="flast_name" class="form-control input-md" placeholder="First Name" ng-model='vm.flast_name' ng-minlength=2  required>
+            <input type="text" name="flast_name" class="form-control input-md" ng-model='vm.flast_name' ng-minlength=2  required>
             <div class='help-block' ng-show='registerFarmerForm.flast_name.$dirty &&
               registerFarmerForm.flast_name.$error.required'>
               Last Name is required
@@ -49,7 +49,7 @@
                 registerFarmerForm.femail.$dirty) || (registerFarmerForm.femail.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Email</label>
-            <input type="email" name="femail" class="form-control input-md" placeholder="Email" ng-model='vm.femail' required>
+            <input type="email" name="femail" class="form-control input-md"  ng-model='vm.femail' required>
             <div class='help-block' ng-show='registerFarmerForm.femail.$dirty &&
               registerFarmerForm.femail.$error.required'>
               Email is required
@@ -67,7 +67,7 @@
                 registerFarmerForm.fpassword.$dirty) || (registerFarmerForm.fpassword.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Password</label>
-            <input type="password" name="fpassword" class="form-control input-md" placeholder="Password" ng-model='vm.fpassword' ng-minlength=8  required>
+            <input type="password" name="fpassword" class="form-control input-md" ng-model='vm.fpassword' ng-minlength=8  required>
             <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
               registerFarmerForm.fpassword.$error.required'>
               Company name is required
@@ -82,7 +82,7 @@
                 registerFarmerForm.fcompany_name.$dirty) || (registerFarmerForm.fcompany_name.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Password</label>
-            <input type="text" name="fcompany_name" class="form-control input-md" placeholder="Company Name" ng-model='vm.fcompany_name' ng-minlength=8  required>
+            <input type="text" name="fcompany_name" class="form-control input-md" ng-model='vm.fcompany_name' ng-minlength=8  required>
             <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$dirty &&
               registerFarmerForm.fcompany_name.$error.required'>
               Password is required
@@ -102,7 +102,7 @@
                 registerFarmerForm.faddress.$dirty) || (registerFarmerForm.faddress.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Address</label>
-            <input type="text" name="faddress" class="form-control input-md" placeholder="Address" ng-model='vm.faddress' required>
+            <input type="text" name="faddress" class="form-control input-md" ng-model='vm.faddress' required>
             <div class='help-block' ng-show='registerFarmerForm.faddress.$dirty &&
               registerFarmerForm.faddress.$error.required'>
               Address is required
@@ -118,7 +118,7 @@
                 registerFarmerForm.fcity.$dirty) || (registerFarmerForm.fcity.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">City</label>
-            <input type="text" name="fcity" class="form-control input-md" placeholder="City" ng-model='vm.fcity' required>
+            <input type="text" name="fcity" class="form-control input-md" ng-model='vm.fcity' required>
             <div class='help-block' ng-show='registerFarmerForm.fcity.$dirty &&
               registerFarmerForm.fcity.$error.required'>
               City is required
@@ -133,7 +133,7 @@
                 registerFarmerForm.fstate.$dirty) || (registerFarmerForm.fstate.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">State</label>
-            <input type="text" name="fstate" class="form-control input-md" placeholder="State" ng-model='vm.fstate' required>
+            <input type="text" name="fstate" class="form-control input-md" ng-model='vm.fstate' required>
             <div class='help-block' ng-show='registerFarmerForm.fstate.$dirty &&
               registerFarmerForm.fstate.$error.required'>
               State is required
@@ -148,7 +148,7 @@
                 registerFarmerForm.fzip.$dirty) || (registerFarmerForm.fzip.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Zip</label>
-            <input type="text" name="fzip" class="form-control input-md" placeholder="Address" ng-model='vm.fzip' required>
+            <input type="text" name="fzip" class="form-control input-md" ng-model='vm.fzip' required>
             <div class='help-block' ng-show='registerFarmerForm.fzip.$dirty &&
               registerFarmerForm.fzip.$error.required'>
               Zip is required
@@ -168,10 +168,14 @@
                 registerFarmerForm.ffarm_size.$dirty) || (registerFarmerForm.ffarm_size.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Farm size (planted acres)</label>
-            <input type="number" name="ffarm_size" class="form-control input-md" placeholder="Farm size" ng-model='vm.ffarm_size' required>
+            <input type="text" name="ffarm_size" class="form-control input-md" ng-model='vm.ffarm_size' ng-pattern="/^\d*$/" required>
             <div class='help-block' ng-show='registerFarmerForm.ffarm_size.$dirty &&
               registerFarmerForm.ffarm_size.$error.required'>
               Farm size is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.ffarm_size.$dirty &&
+              registerFarmerForm.ffarm_size.$invalid'>
+              Invalid farm size
             </div>
             <div class='help-block' ng-show='registerFarmerForm.ffarm_size.$pristine &&
               registerFarmerForm.ffarm_size.$error.required && registerFarmerForm.$submitted'>
@@ -184,10 +188,14 @@
                 registerFarmerForm.fphone.$dirty) || (registerFarmerForm.fphone.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Phone Number</label>
-            <input type="number" name="fphone" class="form-control input-md" placeholder="Phone Number" ng-model='vm.fphone' required>
+            <input type="text" name="fphone" class="form-control input-md" ng-model='vm.fphone' ng-pattern="/^\d*$/" required>
             <div class='help-block' ng-show='registerFarmerForm.fphone.$dirty &&
               registerFarmerForm.fphone.$error.required'>
               Phone number is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fphone.$dirty &&
+              registerFarmerForm.fphone.$invalid'>
+              Invalid phone number
             </div>
             <div class='help-block' ng-show='registerFarmerForm.fphone.$pristine &&
               registerFarmerForm.fphone.$error.required && registerFarmerForm.$submitted'>
