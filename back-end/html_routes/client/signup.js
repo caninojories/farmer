@@ -11,5 +11,9 @@
     res.render('client/signup/buyer.html');
   });
 
+  router.get('/client/signup/account_signup.html', function(req, res) {
+    res.render('client/signup/account_signup.html');
+  });
+
   module.exports = router;
 }());

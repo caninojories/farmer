@@ -2,12 +2,17 @@
   'use strict';
 
   exports._ = function(options) {
-    console.log(options);
     var document = io[options.name](options.details);
       document.save(function(error) {
-        console.log(error);
         if (options.done) {options.done(null, document);}
         else {options.res.json({message: options.message, status: 200, data: document});}
+      });
+  };
+
+  exports._notify_email = function(options) {
+    var document = io[options.name](options.details);
+      document.save(function(error) {
+        io.notify_by_email(io, options.query.email, options.res);
       });
   };
 

@@ -26,6 +26,7 @@
       var options = {
         name    : 'Farmer',
         res     : res,
+        query   : query,
         message : 'Saving data in Farmer',
         details : {
           last_name   : query.last_name,
@@ -42,8 +43,9 @@
         }
       };
 
+
       io.mongoDB(io.config.dbName)
-        .then(io.save._(options));
+        .then(io.save._notify_email(options));
     }
   };
 
@@ -73,6 +75,7 @@
       var options = {
         name    : 'Buyer',
         res     : res,
+        query   : query,
         message : 'Saving data in Buyer',
         details : {
           first_name      : query.first_name,
@@ -91,9 +94,8 @@
         }
       };
 
-      console.log(io.save_);
       io.mongoDB(io.config.dbName)
-        .then(io.save._(options));
+        .then(io.save._notify_email(options));
     }
   };
 }());

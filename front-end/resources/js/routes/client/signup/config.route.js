@@ -27,6 +27,13 @@
             controller: 'Buyer as vm',
             title: 'Buyer'
           }
+      }, {
+          state: 'signup',
+          config: {
+            url: '/signup/account_signup',
+            templateUrl: '/client/signup/account_signup.html',
+            title: 'Signup'
+          }
       }];
     }
 }());

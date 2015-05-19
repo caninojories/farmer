@@ -11,6 +11,8 @@
   module.exports = {
 
     rootPath          : rootPath,
+    path              : path,
+    fs                : require('fs'),
     authorize         : require(service + 'authorize'),
     clusterService    : require(service + './cluster'),
     config            : require('./settings.config'),
@@ -18,6 +20,7 @@
     error             : require(service + './error'),
     facebookAuth      : require(service + './facebookAuth'),
     get               : require(service + './get'),
+    notify_by_email   : require(service + './notify_by_email'),
     save              : require(service + './save'),
     googleAuth        : require(service + './googleAuth'),
     User              : require('../model/User'),
@@ -42,6 +45,7 @@
     methodOverride    : require('method-override'),
     moment            : require('moment'),
     mongoose          : Promise.promisifyAll(mongoose),
+    nodemailer        : require('nodemailer'),
     multer            : require('multer'),
     numCPUs           : require('os').cpus().length,
     nunjucks          : require('nunjucks'),
@@ -54,6 +58,7 @@
     qs                : require('querystring'),
     request           : require('request-promise'),
     url               : require('url'),
+    _                 : require('underscore'),
 
     port              : process.env.PORT || 3262,
     environment       : process.env.NODE_ENV || 'development',
