@@ -24,5 +24,6 @@
         'app.main',
         'app.signup',
         'app.sample',
+        'app.farmer',
     ]);
 })();
