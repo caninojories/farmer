@@ -9,37 +9,36 @@
         <h4>Forgot your password?</h4>
         <p>Send your email and recover your password.</p>
         <div class="container-fluid">
-          <div class="row" style="margin-top:50px" >
+          <div class="row" style="margin-top:20px" >
             <div class="col-sm-6 col-sm-offset-3 text-center" ng-class="{'has-error':(
-            registerBuyerForm.email.$invalid && registerBuyerForm.email.$dirty ||
-            registerBuyerForm.email.$invalid && registerBuyerForm.$submitted)}">
+            email.$invalid && email.$dirty )}">
               <label class='control-label'>Email Address</label>
               <input name="email" class="form-control" type="email" ng-model="vm.email" required/>
-              <div class='help-block' ng-show='registerBuyerForm.email.$dirty &&
-              registerBuyerForm.email.$error.required'>
+              <div class='help-block' ng-show='email.$dirty &&
+              email.$error.required'>
               Email is required
               </div>
-              <div class='help-block' ng-show='registerBuyerForm.email.$pristine &&
-              registerBuyerForm.email.$error.required && registerBuyerForm.$submitted'>
+              <div class='help-block' ng-show='email.$pristine &&
+              email.$error.required'>
               Email is required
               </div>
-              <div class='help-block' ng-show='registerBuyerForm.email.$dirty &&
-              registerBuyerForm.email.$invalid'>
+              <div class='help-block' ng-show='email.$dirty &&
+              email.$invalid'>
               Must enter a valid email address
               </div>
             </div>
-            <div class="col-sm-6 col-sm-offset-3 text-center" >
+            <div class="col-sm-6 col-sm-offset-3 text-center" style="margin-top:10px">
               <!-- <button class="btn btn-success btn-sm" ui-sref="buyer" style="width:100%">
                 Buyer
               </button> -->
-              <button type='submit' class='btn btn-primary text-center' ui-sref="forgot_pass">
+              <button type='submit' class='btn btn-primary text-center' >
                 Submit
               </button>
             </div>
           </div>
 
           <div class="row" style="margin-top: 100px;">
-            <p class="text-center">New to Locaverse? <a ui-sref="sign_up">Sign up</a></p>
+            <p class="text-center">New to Locaverse? <a ui-sref="signup">Sign up</a></p>
           </div>
         </div>
       </div>

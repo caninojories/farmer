@@ -34,6 +34,13 @@
             templateUrl: '/client/signup/account_signup.html',
             title: 'Signup'
           }
+      }, {
+        state: 'forgotpass',
+        config: {
+          url: '/signup/forgot_pass',
+          templateUrl: '/client/signup/forgot_pass.html',
+          title: 'Forgotpass'
+        }
       }];
     }
 }());

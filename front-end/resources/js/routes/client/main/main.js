@@ -31,6 +31,6 @@
       // }
       function login(){
         console.log("login called")
-      }1
+      }
     }
 }());
