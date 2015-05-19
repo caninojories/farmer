@@ -43,7 +43,7 @@
       };
 
       io.mongoDB(io.config.dbName)
-        .then(io.save(options));
+        .then(io.save._(options));
     }
   };
 
@@ -91,8 +91,9 @@
         }
       };
 
+      console.log(io.save_);
       io.mongoDB(io.config.dbName)
-        .then(io.save(options));
+        .then(io.save._(options));
     }
   };
 }());
