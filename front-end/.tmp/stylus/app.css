@@ -163,13 +163,12 @@
     transform: scale(0.7);
   }
 }
-<<<<<<< HEAD
 .modal-body-padding {
   padding: 40px;
 }
 .modal-body-padding {
   padding: 40px;
-=======
+
 #site-wrapper {
   position: relative;
   overflow: hidden;
@@ -210,5 +209,4 @@
 #site-wrapper.show-nav #site-canvas {
   -webkit-transform: translate3d(200px, 0, 0);
   transform: translate3d(200px, 0, 0);
->>>>>>> 400b54ca717c8c052a54ada18a1e1d16d3c92f78
 }
