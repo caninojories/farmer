@@ -24,5 +24,8 @@
         'app.main',
         'app.signup',
         'app.sample',
+
+        /*admin*/
+        'app.admin_main'
     ]);
 })();
