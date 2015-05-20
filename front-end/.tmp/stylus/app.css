@@ -163,3 +163,44 @@
     transform: scale(0.7);
   }
 }
+#site-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+#site-canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0);
+  transform: translate3d(0);
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
+  padding: 5% 0; /* Temp: Just spacing. */
+}
+#site-canvas .toggle-nav {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+#site-menu {
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -200px;
+  background: #34495e;
+  padding: 15px;
+}
+#site-menu .menu {
+  margin-top: 10px;
+  padding: 0;
+}
+#site-wrapper.show-nav #site-canvas {
+  -webkit-transform: translate3d(200px, 0, 0);
+  transform: translate3d(200px, 0, 0);
+}

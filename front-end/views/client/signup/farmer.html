@@ -70,30 +70,30 @@
             <input type="password" name="fpassword" class="form-control input-md" ng-model='vm.fpassword' ng-minlength=8  required>
             <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
               registerFarmerForm.fpassword.$error.required'>
-              Company name is required
+              Password is required
             </div>
             <div class='help-block' ng-show='registerFarmerForm.fpassword.$pristine &&
               registerFarmerForm.fpassword.$error.required && registerFarmerForm.$submitted'>
-              Company name is required
+              Password is required
+            </div>
+            <div class='help-block' ng-show='registerFarmerForm.fpassword.$dirty &&
+              registerFarmerForm.fpassword.$error.minlength'>
+              Password must be atleast 8 characters
             </div>
           </div>
 
           <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fcompany_name.$invalid &&
                 registerFarmerForm.fcompany_name.$dirty) || (registerFarmerForm.fcompany_name.$invalid &&
                 registerFarmerForm.$submitted)}">
-            <label class="control-label">Password</label>
+            <label class="control-label">Company Name</label>
             <input type="text" name="fcompany_name" class="form-control input-md" ng-model='vm.fcompany_name' ng-minlength=8  required>
             <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$dirty &&
               registerFarmerForm.fcompany_name.$error.required'>
-              Password is required
-            </div>
-            <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$dirty &&
-              registerFarmerForm.fcompany_name.$error.minlength'>
-              Last Name must be atleast 8 characters
+              Company name is required
             </div>
             <div class='help-block' ng-show='registerFarmerForm.fcompany_name.$pristine &&
               registerFarmerForm.fcompany_name.$error.required && registerFarmerForm.$submitted'>
-              Password is required
+              Company Name is required
             </div>
           </div>
 
@@ -114,7 +114,7 @@
           </div>
 
 
-          <div class="col-lg-4" ng-class="{ 'has-error' : (registerFarmerForm.fcity.$invalid &&
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fcity.$invalid &&
                 registerFarmerForm.fcity.$dirty) || (registerFarmerForm.fcity.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">City</label>
@@ -129,7 +129,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4" ng-class="{ 'has-error' : (registerFarmerForm.fstate.$invalid &&
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fstate.$invalid &&
                 registerFarmerForm.fstate.$dirty) || (registerFarmerForm.fstate.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">State</label>
@@ -144,7 +144,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4" ng-class="{ 'has-error' : (registerFarmerForm.fzip.$invalid &&
+          <div class="form-group" ng-class="{ 'has-error' : (registerFarmerForm.fzip.$invalid &&
                 registerFarmerForm.fzip.$dirty) || (registerFarmerForm.fzip.$invalid &&
                 registerFarmerForm.$submitted)}">
             <label class="control-label">Zip</label>

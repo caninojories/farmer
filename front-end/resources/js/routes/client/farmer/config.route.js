@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.sample')
+    .module('app.farmer')
     .run(appRun);
 
     appRun.$inject = ['routehelper'];
@@ -12,16 +12,14 @@
 
     function getRoutes() {
       return [{
-        state: 'sample',
+        state: 'inventory',
         config: {
-          url: '/sample',
+          url: '/farmer/inventory',
           templateUrl: '/client/farmer/inventory.html',
-          controller: 'Sample as vm',
-          title: 'Sample',
+          controller: 'Inventory as vm',
+          title: 'Inventory',
           resolve: {/* @ngInject */
-            flatUi: function(viewContentLoaded) {
-              viewContentLoaded.carouselScript();
-            }
+
           }
         }
       }];

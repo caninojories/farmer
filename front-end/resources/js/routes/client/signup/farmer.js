@@ -16,19 +16,6 @@
       /*functions*/
       vm.register_farmer=register_farmer;
 
-      // vm.ffirst_name ;
-      // vm.flast_name ;
-      // vm.femail ;
-      // vm.fpassword ;
-      // vm.fcompany_name ;
-      // vm.faddress ;
-      // vm.fcity ;
-      // vm.fstate ;
-      // vm.fzip ;
-      // vm.fphone ;
-      // vm.fdescription ;
-      // vm.ffarm_size ;
-
       function register_farmer(){
         console.log('farmer');
         $q.all([total_searchCallback()])
