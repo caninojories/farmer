@@ -24,6 +24,7 @@
         'app.main',
         'app.signup',
         'app.sample',
+        'app.farmer',
 
         /*admin*/
         'app.admin_main'
