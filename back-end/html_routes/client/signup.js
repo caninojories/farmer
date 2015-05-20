@@ -15,5 +15,9 @@
     res.render('client/signup/account_signup.html');
   });
 
+  router.get('/client/signup/forgot_pass.html', function(req, res) {
+    res.render('client/signup/forgot_pass.html');
+  });
+
   module.exports = router;
 }());
