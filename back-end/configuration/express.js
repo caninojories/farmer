@@ -38,7 +38,17 @@
       extended: true
     }));
     app.use(io.bodyParser.json());
-    app.use(io.multer());
+    app.use(io.multer({ dest: './uploads/',
+      rename: function (fieldname, filename) {
+        return filename+Date.now();
+      },
+      onFileUploadStart: function (file) {
+        console.log(file.originalname + ' is starting ...');
+      },
+      onFileUploadComplete: function (file) {
+        console.log(file.fieldname + ' uploaded to  ' + file.path);
+      }
+ }));
     app.use(io.methodOverride(function(req, res) {
       if (req.body && typeof req.body === 'object' && '_method' in req.body) {
         var method = req.body._method;
