@@ -30,7 +30,7 @@
             registerBuyerForm.lastName.$invalid && registerBuyerForm.lastName.$dirty||
             registerBuyerForm.lastName.$invalid && registerBuyerForm.$submitted)}">
               <label class='control-label'>Last Name</label>
-              <input name="lastName" class="form-control input-md" type="text" ng-model="vm.last_name" ng-minlength ="3" required/>
+              <input name="lastName" class="form-control input-md" type="text" ng-model="vm.last_name" ng-minlength ="2" required/>
               <div class='help-block' ng-show='registerBuyerForm.lastName.$dirty &&
               registerBuyerForm.lastName.$error.required'>
               Last Name is required
@@ -214,7 +214,9 @@
         </div>
         <div class='modal-footer'>
           <div class="text-center">
-            <button type='submit' class='btn btn-primary text-center'>Sign up</button>
+            <button type='submit' class='btn btn-primary text-center' ng-disabled="registerBuyerForm.$invalid || registerBuyerForm.$error.required">
+              Sign up
+            </button>
           </div>
           <div class="row" style="margin-top: 60px;">
             <p class="text-center">Already a member? <a href="main">Sign in</a></p>

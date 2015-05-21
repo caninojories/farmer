@@ -32,6 +32,7 @@
           config: {
             url: '/signup/account_signup',
             templateUrl: '/client/signup/account_signup.html',
+            controller: 'Signup as vm',
             title: 'Signup'
           }
       }, {

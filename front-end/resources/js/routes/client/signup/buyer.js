@@ -5,16 +5,17 @@
     .module('app.signup')
     .controller('Buyer', Buyer);
 
-    Buyer.$inject = ['$rootScope', 'commonsDataService', '$q', 'signupServiceApi'];
+    Buyer.$inject = ['$rootScope', '$state',  'commonsDataService', '$q', 'signupServiceApi'];
 
     /* @ngInject */
-    function Buyer($rootScope, commonsDataService, $q, signupServiceApi) {
+    function Buyer($rootScope, $state, commonsDataService, $q, signupServiceApi) {
       var vm = this;
 
       /*literals*/
+      vm.register_buyer = register_buyer;
 
       /*functions*/
-      vm.register_buyer = register_buyer;
+
 
       function register_buyer(){
         $q.all([total_searchCallback()])
@@ -40,7 +41,12 @@
             business_type : vm.business_type
           }, signupServiceApi)
           .then(function(response) {
-            return response;
+            /* success */
+            $rootScope.signup_success = true;
+            $state.go('signup');
+          }).catch(function(error) {
+            /*error*/
+            console.log('error');
           });
       }
 
