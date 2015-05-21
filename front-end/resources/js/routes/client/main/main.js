@@ -27,7 +27,7 @@
             .httpPOSTQueryParams('login/user', {
                 email : vm.email,
                 password : vm.password
-            }, /* Service here*/)
+            }, Restangular)
             .then(function(response) {
               return response;
             });
