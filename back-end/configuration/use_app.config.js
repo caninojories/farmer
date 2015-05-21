@@ -11,9 +11,10 @@
           sample    : require(clientRoutes + 'sample'),
         },
         use_app_admin   = {
-          main: require(adminRoutes + 'main')
+          main        : require(adminRoutes + 'main'),
+          users       : require(adminRoutes + 'users'),
         };
-        
+
     return useApp([
       use_app_client.farmer,
       use_app_client.main,
@@ -22,6 +23,7 @@
 
       /*admin app*/
       use_app_admin.main,
+      use_app_admin.users
     ]);
 
     function useApp(param) {
