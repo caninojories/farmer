@@ -11,14 +11,15 @@
   function Inventory(logger, viewContentLoaded,strapModal) {
     var vm = this;
     vm.add_inventory=add_inventory;
-    vm.add_item=add_item;
+    vm.add_item_link=add_item_link;
 
     function add_inventory(){
       console.log('click');
       strapModal.show('am-fade-and-scale', 'center', 'commons/add_inventory.html');
     }
-    function add_item(){
+    function add_item_link(){
       console.log('clickssss');
+      strapModal.show('am-fade-and-scale', 'center', 'commons/add_item.html');
     }
 
   }
