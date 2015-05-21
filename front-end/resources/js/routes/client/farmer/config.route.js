@@ -17,11 +17,16 @@
           url: '/farmer/inventory',
           templateUrl: '/client/farmer/inventory.html',
           controller: 'Inventory as vm',
-          title: 'Inventory',
-          resolve: {/* @ngInject */
-
-          }
+          title: 'Inventory'
         }
+      }, {
+          state: 'account_settings',
+          config: {
+            url: '/farmer/account_settings',
+            templateUrl: '/client/farmer/account_settings.html',
+            controller: 'Account_settings as vm',
+            title: 'Account_settings'
+          }
       }];
     }
-})();
+}());

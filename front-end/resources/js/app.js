@@ -27,6 +27,7 @@
         'app.farmer',
 
         /*admin*/
-        'app.admin_main'
+        'app.admin_main',
+        'app.admin_users'
     ]);
 })();

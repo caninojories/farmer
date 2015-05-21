@@ -1,0 +1,272 @@
+<section ng-include="'commons/header.html'"></section>
+<div class="main_">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h4 class='col-lg-8'>Account Settings</h4>
+      </div>
+    </div>
+    <div class="row pull-right">
+      <div class="col-lg-12">
+        <a id="add_inventory" href="" ng-click="vm.save_profile()"><p>Save Changes</p></a>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 col-lg-offset-2 form-horizontal">
+        <form name="updateFarmerForm" ng-submit="vm.update_farmer()" novalidate>
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.ffirst_name.$invalid &&
+                updateFarmerForm.ffirst_name.$dirty) || (updateFarmerForm.ffirst_name.$invalid &&
+                updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">First Name</label>
+            <div class="col-lg-9">
+              <input type="text" name="ffirst_name" class="form-control input-md"  ng-model='vm.ffirst_name' ng-minlength=2  required>
+              <div class='help-block' ng-show='updateFarmerForm.ffirst_name.$dirty &&
+                updateFarmerForm.ffirst_name.$error.required'>
+                First Name is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.ffirst_name.$dirty &&
+                updateFarmerForm.ffirst_name.$error.minlength'>
+                First Name must be atleast 2 characters
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.ffirst_name.$pristine &&
+                updateFarmerForm.ffirst_name.$error.required && updateFarmerForm.$submitted'>
+                First Name is required
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.flast_name.$invalid &&
+                updateFarmerForm.flast_name.$dirty) || (updateFarmerForm.flast_name.$invalid &&
+                updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">Last Name</label>
+            <div class="col-lg-9">
+              <input type="text" name="flast_name" class="form-control input-md" ng-model='vm.flast_name' ng-minlength=2  required>
+              <div class='help-block' ng-show='updateFarmerForm.flast_name.$dirty &&
+                updateFarmerForm.flast_name.$error.required'>
+                Last Name is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.flast_name.$dirty &&
+                updateFarmerForm.flast_name.$error.minlength'>
+                Last Name must be atleast 2 characters
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.flast_name.$pristine &&
+                updateFarmerForm.flast_name.$error.required && updateFarmerForm.$submitted'>
+                Last Name is required
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.fcompany_name.$invalid &&
+                updateFarmerForm.fcompany_name.$dirty) || (updateFarmerForm.fcompany_name.$invalid &&
+                updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">Company Name</label>
+            <div class="col-lg-9">
+              <input type="text" name="fcompany_name" class="form-control input-md" ng-model='vm.fcompany_name' required>
+              <div class='help-block' ng-show='updateFarmerForm.fcompany_name.$dirty &&
+                updateFarmerForm.fcompany_name.$error.required'>
+                Company name is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.fcompany_name.$pristine &&
+                updateFarmerForm.fcompany_name.$error.required && updateFarmerForm.$submitted'>
+                Company Name is required
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.femail.$invalid &&
+                updateFarmerForm.femail.$dirty) || (updateFarmerForm.femail.$invalid && updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">Email</label>
+            <div class="col-lg-9">
+              <input type="email" name="femail" class="form-control input-md"  ng-model='vm.femail' required>
+              <div class='help-block' ng-show='updateFarmerForm.femail.$dirty &&
+                updateFarmerForm.femail.$error.required'>
+                Email is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.femail.$dirty && updateFarmerForm.femail.$error.email'>
+                Invalid email address
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.femail.$pristine &&
+                updateFarmerForm.femail.$error.required && updateFarmerForm.$submitted'>
+                Email is required
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.faddress.$invalid &&
+                updateFarmerForm.faddress.$dirty) || (updateFarmerForm.faddress.$invalid &&
+                updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">Address</label>
+            <div class="col-lg-9">
+              <input type="text" name="faddress" class="form-control input-md" ng-model='vm.faddress' required>
+              <div class='help-block' ng-show='updateFarmerForm.faddress.$dirty &&
+                updateFarmerForm.faddress.$error.required'>
+                Address is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.faddress.$pristine &&
+                updateFarmerForm.faddress.$error.required && updateFarmerForm.$submitted'>
+                Address is required
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.fcity.$invalid &&
+                updateFarmerForm.fcity.$dirty) || (updateFarmerForm.fcity.$invalid &&
+                updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">City</label>
+            <div class="col-lg-9">
+              <input type="text" name="fcity" class="form-control input-md" ng-model='vm.fcity' required>
+              <div class='help-block' ng-show='updateFarmerForm.fcity.$dirty &&
+                updateFarmerForm.fcity.$error.required'>
+                City is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.fcity.$pristine &&
+                updateFarmerForm.fcity.$error.required && updateFarmerForm.$submitted'>
+                City is required
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group" >
+            <label class="control-label col-lg-3">State</label>
+            <div class="col-lg-9">
+              <select name="fstate" class="form-control" ng-model="vm.fstate" required>
+                <option value="" disabled selected>State</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (updateFarmerForm.fzip.$invalid &&
+                updateFarmerForm.fzip.$dirty) || (updateFarmerForm.fzip.$invalid &&
+                updateFarmerForm.$submitted)}">
+            <label class="col-lg-3 control-label">Zip</label>
+            <div class="col-lg-9">
+              <input type="text" name="fzip" class="form-control input-md" ng-model='vm.fzip' required>
+              <div class='help-block' ng-show='updateFarmerForm.fzip.$dirty &&
+                updateFarmerForm.fzip.$error.required'>
+                Zip is required
+              </div>
+              <div class='help-block' ng-show='updateFarmerForm.fzip.$pristine &&
+                updateFarmerForm.fzip.$error.required && updateFarmerForm.$submitted'>
+                Zip is required
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-lg-3">Personal Description</label>
+            <div class="col-lg-9">
+              <textarea class="form-control" ng-model="vm.fdescription"></textarea>
+            </div>
+          </div>
+
+
+          <div class="form-group" ng-class="{ 'has-error' : ((updateFarmerForm.fphone1.$invalid && updateFarmerForm.fphone1.$dirty) || (updateFarmerForm.fphone1.$invalid && updateFarmerForm.$submitted))||
+
+          ((updateFarmerForm.fphone2.$invalid && updateFarmerForm.fphone2.$dirty) || (updateFarmerForm.fphone2.$invalid && updateFarmerForm.$submitted))||
+
+          ((updateFarmerForm.fphone3.$invalid && updateFarmerForm.fphone3.$dirty) || (updateFarmerForm.fphone3.$invalid && updateFarmerForm.$submitted))
+          }">
+            <label class="control-label col-lg-3">Phone Number</label>
+            <div class="col-lg-9">
+              <div class="col-lg-3">
+                <input type="text" name="fphone1" class="form-control input-md" ng-model='vm.fphone1' ng-pattern="/^\d*$/" required>
+              </div>
+              <div class="col-lg-3">
+                <input type="text" name="fphone2" class="form-control input-md" ng-model='vm.fphone2' ng-pattern="/^\d*$/" required>
+              </div>
+              <div class="col-lg-3">
+                <input type="text" name="fphone3" class="form-control input-md" ng-model='vm.fphone3' ng-pattern="/^\d*$/" required>
+              </div>
+
+
+
+              <div class='help-block' ng-show='(updateFarmerForm.fphone1.$dirty || updateFarmerForm.fphone2.$dirty || updateFarmerForm.fphone3.$dirty)&&
+                (updateFarmerForm.fphone1.$error.required && updateFarmerForm.fphone2.$error.required &&
+                updateFarmerForm.fphone3.$error.required)'>
+                Phone number is required
+              </div>
+              <div class='help-block' ng-show='(updateFarmerForm.fphone1.$dirty || updateFarmerForm.fphone2.$dirty || updateFarmerForm.fphone3.$dirty)&&
+                (updateFarmerForm.fphone1.$invalid || updateFarmerForm.fphone2.$invalid || updateFarmerForm.fphone3.$invalid)'>
+                Invalid phone number
+              </div>
+              <div class='help-block' ng-show='(updateFarmerForm.fphone1.$pristine && updateFarmerForm.fphone2.$pristine && updateFarmerForm.fphone3.$pristine) && (updateFarmerForm.fphone1.$error.required && updateFarmerForm.fphone2.$error.required && updateFarmerForm.fphone3.$error.required) &&
+              updateFarmerForm.$submitted'>
+                Phone number is required
+              </div>
+
+
+
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-3">Profile Photo</label>
+            <div class="col-lg-9">
+              <input type="file" ng-model="vm.photo"/>
+            </div>
+          </div>
+          <div class="form-group" >
+            <label class="control-label col-lg-3">Certifications</label>
+            <div class="col-lg-9">
+              <select name="fstate" class="form-control" ng-model="vm.fstate" required>
+                <option value="" disabled selected>Choose Certification(s)</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+              </select>
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <p class="col-lg-offset-1">If you would like payments to be automatically deposited into your bank account, please fill out the following information. Otherwise, you will receive payment by check.
+      </p>
+      <div class="col-lg-6 col-lg-offset-2 form-horizontal">
+        <div class="row">
+          <div class="form-group">
+            <label class="control-label col-lg-3">Account Number</label>
+            <div class="col-lg-9">
+              <input type="text" name="account_num" class="form-control input-md" ng-model='vm.account_num'>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-lg-3">Routing Number</label>
+            <div class="col-lg-9">
+              <input type="text" name="routing_num" class="form-control input-md" ng-model='vm.routing_num'>
+            </div>
+          </div>
+          <div class="row pull-right">
+            <div class="col-lg-12">
+              <a id="add_inventory" href="" ng-click="vm.save_payment_info()"><p>Save Changes</p></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+</div>

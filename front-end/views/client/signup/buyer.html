@@ -6,207 +6,209 @@
         <div class="modal-header">
           <h4 class='modal-title'>Sign up to be a buyer</h4>
         </div>
-        <div class="modal-body">
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.firstName.$invalid && registerBuyerForm.firstName.$dirty ||
-          registerBuyerForm.firstName.$invalid && registerBuyerForm.$submitted)}">
-            <label class='control-label'>First Name</label>
-            <input name="firstName" class="form-control input-md" type="text" ng-model="vm.first_name" ng-minlength ="2" required/>
-            <div class='help-block' ng-show='registerBuyerForm.firstName.$dirty &&
-            registerBuyerForm.firstName.$error.required '>
-            First Name is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.firstName.$pristine &&
-            registerBuyerForm.firstName.$error.required && registerBuyerForm.$submitted '>
-            First Name is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.firstName.$dirty &&
-            registerBuyerForm.firstName.$error.minlength'>
-            Must not enter less than two (2) characters for name
-            </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.lastName.$invalid && registerBuyerForm.lastName.$dirty||
-          registerBuyerForm.lastName.$invalid && registerBuyerForm.$submitted)}">
-            <label class='control-label'>Last Name</label>
-            <input name="lastName" class="form-control input-md" type="text" ng-model="vm.last_name" ng-minlength ="3" required/>
-            <div class='help-block' ng-show='registerBuyerForm.lastName.$dirty &&
-            registerBuyerForm.lastName.$error.required'>
-            Last Name is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.lastName.$pristine &&
-            registerBuyerForm.lastName.$error.required && registerBuyerForm.$submitted'>
-            Last Name is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.lastName.$dirty &&
-            registerBuyerForm.lastName.$error.minlength'>
-            Must not enter less than two (2) characters for name
-            </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.email.$invalid && registerBuyerForm.email.$dirty ||
-          registerBuyerForm.email.$invalid && registerBuyerForm.$submitted)}">
-            <label class='control-label'>Email</label>
-            <input name="email" class="form-control" type="email" ng-model="vm.email" required/>
-            <div class='help-block' ng-show='registerBuyerForm.email.$dirty &&
-            registerBuyerForm.email.$error.required'>
-            Email is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.email.$pristine &&
-            registerBuyerForm.email.$error.required && registerBuyerForm.$submitted'>
-            Email is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.email.$dirty &&
-            registerBuyerForm.email.$invalid'>
-            Must enter a valid email address
-            </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.password.$invalid && registerBuyerForm.password.$dirty ||
-          registerBuyerForm.password.$invalid && registerBuyerForm.$submitted)}">
-            <label class='control-label'>Password</label>
-            <input name="password" class="form-control" type="password" ng-model="vm.password" ng-minlength="8" required/>
-            <div class='help-block' ng-show='registerBuyerForm.password.$dirty &&
-            registerBuyerForm.password.$error.required'>
-            Password is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.password.$pristine &&
-            registerBuyerForm.password.$error.required && registerBuyerForm.$submitted'>
-            Password is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.password.$dirty &&
-            registerBuyerForm.password.$error.minlength'>
-            Must not enter less than eight (8) characters for password
-            </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.companyNames.$invalid && registerBuyerForm.companyName.$dirty ||
-          registerBuyerForm.companyName.$invalid && registerBuyerForm.$submitted)}">
-            <label class='control-label'>Company Name</label>
-            <input name="companyName" class="form-control" type="text" ng-model="vm.company_name" required/>
-            <div class='help-block' ng-show='registerBuyerForm.companyName.$dirty &&
-            registerBuyerForm.companyName.$error.required'>
-            Company name is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.companyName.$pristine &&
-            registerBuyerForm.companyName.$error.required && registerBuyerForm.$submitted'>
-            Company name is required
-          </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.address.$invalid && registerBuyerForm.address.$dirty ||
-          registerBuyerForm.address.$invalid && registerBuyerForm.$submitted)}">
-            <label class="control-label">Address</label>
-            <input name="address" class="form-control" type="text" ng-model="vm.address" required/>
-            <div class='help-block' ng-show='registerBuyerForm.address.$dirty &&
-            registerBuyerForm.address.$error.required'>
-            Address is required
-            </div>
-            <div class='help-block' ng-show='registerBuyerForm.address.$pristine &&
-            registerBuyerForm.address.$error.required && registerBuyerForm.$submitted'>
-            Address is required
-            </div>
-          </div>
-          <div>
+        <div class="modal-body modal-body-padding">
+          <div class="form-horizontal">
             <div class="form-group" ng-class="{'has-error':(
-            registerBuyerForm.city.$invalid && registerBuyerForm.city.$dirty ||
-            registerBuyerForm.city.$invalid && registerBuyerForm.$submitted)}">
-              <label class="control-label">City</label>
-              <input name ="city" class="form-control" type="text" ng-model="vm.city" required/>
-              <div class='help-block' ng-show='registerBuyerForm.city.$dirty &&
-              registerBuyerForm.city.$error.required'>
-              City is required
+            registerBuyerForm.firstName.$invalid && registerBuyerForm.firstName.$dirty ||
+            registerBuyerForm.firstName.$invalid && registerBuyerForm.$submitted)}">
+              <label class='control-label'>First Name</label>
+              <input name="firstName" class="form-control input-md" type="text" ng-model="vm.first_name" ng-minlength ="2" required/>
+              <div class='help-block' ng-show='registerBuyerForm.firstName.$dirty &&
+              registerBuyerForm.firstName.$error.required '>
+              First Name is required
               </div>
-              <div class='help-block' ng-show='registerBuyerForm.city.$pristine &&
-              registerBuyerForm.city.$error.required && registerBuyerForm.$submitted'>
-              City is required
+              <div class='help-block' ng-show='registerBuyerForm.firstName.$pristine &&
+              registerBuyerForm.firstName.$error.required && registerBuyerForm.$submitted '>
+              First Name is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.firstName.$dirty &&
+              registerBuyerForm.firstName.$error.minlength'>
+              Must not enter less than two (2) characters for name
               </div>
             </div>
             <div class="form-group" ng-class="{'has-error':(
-            registerBuyerForm.state.$invalid && registerBuyerForm.state.$dirty ||
-            registerBuyerForm.state.$invalid && registerBuyerForm.$submitted)}">
-              <label class="control-label">State</label>
-              <input name="state" class="form-control" type="text" ng-model="vm.state" required/>
-              <div class='help-block' ng-show='registerBuyerForm.state.$dirty &&
-              registerBuyerForm.state.$error.required'>
-              State is required
+            registerBuyerForm.lastName.$invalid && registerBuyerForm.lastName.$dirty||
+            registerBuyerForm.lastName.$invalid && registerBuyerForm.$submitted)}">
+              <label class='control-label'>Last Name</label>
+              <input name="lastName" class="form-control input-md" type="text" ng-model="vm.last_name" ng-minlength ="3" required/>
+              <div class='help-block' ng-show='registerBuyerForm.lastName.$dirty &&
+              registerBuyerForm.lastName.$error.required'>
+              Last Name is required
               </div>
-              <div class='help-block' ng-show='registerBuyerForm.state.$pristine &&
-              registerBuyerForm.state.$error.required && registerBuyerForm.$submitted'>
-              State is required
+              <div class='help-block' ng-show='registerBuyerForm.lastName.$pristine &&
+              registerBuyerForm.lastName.$error.required && registerBuyerForm.$submitted'>
+              Last Name is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.lastName.$dirty &&
+              registerBuyerForm.lastName.$error.minlength'>
+              Must not enter less than two (2) characters for name
               </div>
             </div>
             <div class="form-group" ng-class="{'has-error':(
-            registerBuyerForm.zip.$invalid && registerBuyerForm.zip.$dirty ||
-            registerBuyerForm.zip.$invalid && registerBuyerForm.$submitted)}">
-              <label class="control-label">Zip</label>
-              <input name="zip" class="form-control" type="text" ng-model="vm.zip" required/>
-              <div class='help-block' ng-show='registerBuyerForm.zip.$dirty &&
-              registerBuyerForm.zip.$error.required'>
-              Zip is required
+            registerBuyerForm.email.$invalid && registerBuyerForm.email.$dirty ||
+            registerBuyerForm.email.$invalid && registerBuyerForm.$submitted)}">
+              <label class='control-label'>Email</label>
+              <input name="email" class="form-control" type="email" ng-model="vm.email" required/>
+              <div class='help-block' ng-show='registerBuyerForm.email.$dirty &&
+              registerBuyerForm.email.$error.required'>
+              Email is required
               </div>
-              <div class='help-block' ng-show='registerBuyerForm.zip.$pristine &&
-              registerBuyerForm.zip.$error.required && registerBuyerForm.$submitted'>
-              Zip is required
+              <div class='help-block' ng-show='registerBuyerForm.email.$pristine &&
+              registerBuyerForm.email.$error.required && registerBuyerForm.$submitted'>
+              Email is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.email.$dirty &&
+              registerBuyerForm.email.$invalid'>
+              Must enter a valid email address
               </div>
             </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.phone.$invalid && registerBuyerForm.phone.$dirty ||
-          registerBuyerForm.phone.$invalid && registerBuyerForm.$submitted)}">
-            <label class="control-label">Phone Number</label>
-            <input name ="phone" class="form-control" type="text" ng-model="vm.phone" ng-pattern="/^[\d]*$/" required/>
-            <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
-            registerBuyerForm.phone.$error.required'>
-            Phone number is required
+            <div class="form-group" ng-class="{'has-error':(
+            registerBuyerForm.password.$invalid && registerBuyerForm.password.$dirty ||
+            registerBuyerForm.password.$invalid && registerBuyerForm.$submitted)}">
+              <label class='control-label'>Password</label>
+              <input name="password" class="form-control" type="password" ng-model="vm.password" ng-minlength="8" required/>
+              <div class='help-block' ng-show='registerBuyerForm.password.$dirty &&
+              registerBuyerForm.password.$error.required'>
+              Password is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.password.$pristine &&
+              registerBuyerForm.password.$error.required && registerBuyerForm.$submitted'>
+              Password is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.password.$dirty &&
+              registerBuyerForm.password.$error.minlength'>
+              Must not enter less than eight (8) characters for password
+              </div>
             </div>
-            <div class='help-block' ng-show='registerBuyerForm.phone.$pristine &&
-            registerBuyerForm.phone.$error.required && registerBuyerForm.$submitted'>
-            Phone number is required
+            <div class="form-group" ng-class="{'has-error':(
+            registerBuyerForm.companyNames.$invalid && registerBuyerForm.companyName.$dirty ||
+            registerBuyerForm.companyName.$invalid && registerBuyerForm.$submitted)}">
+              <label class='control-label'>Company Name</label>
+              <input name="companyName" class="form-control" type="text" ng-model="vm.company_name" required/>
+              <div class='help-block' ng-show='registerBuyerForm.companyName.$dirty &&
+              registerBuyerForm.companyName.$error.required'>
+              Company name is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.companyName.$pristine &&
+              registerBuyerForm.companyName.$error.required && registerBuyerForm.$submitted'>
+              Company name is required
             </div>
-            <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
-            registerBuyerForm.phone.$invalid'>
-            Must enter numeric characters
             </div>
-          </div>
-          <div class="form-group">
-            <label class="control-label">Description (Optional)</label>
-            <textarea class="form-control" type="text" ng-model="vm.desc"/>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.monthlyExpense.$invalid && registerBuyerForm.monthlyExpense.$dirty ||
-          registerBuyerForm.monthlyExpense.$invalid && registerBuyerForm.$submitted)}">
-            <label class="control-label">What is your current monthly expense for produce?</label>
-            <select name="monthlyExpense" class="form-control" ng-model="vm.monthly_expense" required>
-              <option value="" disabled selected>Select Amount</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-            </select>
-            <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
-            registerBuyerForm.monthlyExpense.$error.required'>
-            Please select monthly expense
+            <div class="form-group" ng-class="{'has-error':(
+            registerBuyerForm.address.$invalid && registerBuyerForm.address.$dirty ||
+            registerBuyerForm.address.$invalid && registerBuyerForm.$submitted)}">
+              <label class="control-label">Address</label>
+              <input name="address" class="form-control" type="text" ng-model="vm.address" required/>
+              <div class='help-block' ng-show='registerBuyerForm.address.$dirty &&
+              registerBuyerForm.address.$error.required'>
+              Address is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.address.$pristine &&
+              registerBuyerForm.address.$error.required && registerBuyerForm.$submitted'>
+              Address is required
+              </div>
             </div>
-            <div class='help-block' ng-show='registerBuyerForm.phone.$pristine &&
-            registerBuyerForm.monthlyExpense.$error.required && registerBuyerForm.$submitted'>
-            Please select monthly expense
+            <div class="form-group">
+              <div class="col-lg-4" ng-class="{'has-error':(
+              registerBuyerForm.city.$invalid && registerBuyerForm.city.$dirty ||
+              registerBuyerForm.city.$invalid && registerBuyerForm.$submitted)}">
+                <label class="control-label">City</label>
+                <input name ="city" class="form-control" type="text" ng-model="vm.city" required/>
+                <div class='help-block' ng-show='registerBuyerForm.city.$dirty &&
+                registerBuyerForm.city.$error.required'>
+                City is required
+                </div>
+                <div class='help-block' ng-show='registerBuyerForm.city.$pristine &&
+                registerBuyerForm.city.$error.required && registerBuyerForm.$submitted'>
+                City is required
+                </div>
+              </div>
+              <div class="col-lg-4" ng-class="{'has-error':(
+              registerBuyerForm.state.$invalid && registerBuyerForm.state.$dirty ||
+              registerBuyerForm.state.$invalid && registerBuyerForm.$submitted)}">
+                <label class="control-label">State</label>
+                <input name="state" class="form-control" type="text" ng-model="vm.state" required/>
+                <div class='help-block' ng-show='registerBuyerForm.state.$dirty &&
+                registerBuyerForm.state.$error.required'>
+                State is required
+                </div>
+                <div class='help-block' ng-show='registerBuyerForm.state.$pristine &&
+                registerBuyerForm.state.$error.required && registerBuyerForm.$submitted'>
+                State is required
+                </div>
+              </div>
+              <div class="col-lg-4" ng-class="{'has-error':(
+              registerBuyerForm.zip.$invalid && registerBuyerForm.zip.$dirty ||
+              registerBuyerForm.zip.$invalid && registerBuyerForm.$submitted)}">
+                <label class="control-label">Zip</label>
+                <input name="zip" class="form-control" type="text" ng-model="vm.zip" required/>
+                <div class='help-block' ng-show='registerBuyerForm.zip.$dirty &&
+                registerBuyerForm.zip.$error.required'>
+                Zip is required
+                </div>
+                <div class='help-block' ng-show='registerBuyerForm.zip.$pristine &&
+                registerBuyerForm.zip.$error.required && registerBuyerForm.$submitted'>
+                Zip is required
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="form-group" ng-class="{'has-error':(
-          registerBuyerForm.businessType.$invalid && registerBuyerForm.businessType.$dirty ||
-          registerBuyerForm.businessType.$invalid && registerBuyerForm.$submitted)}">
-            <label class="control-label">What is your business type?</label>
-            <select name="businessType" class="form-control" ng-model="vm.business_type" required>
-              <option value="" disabled selected>Select Type</option>
-              <option value="a">a</option>
-              <option value="b">b</option>
-            </select>
-            <div class='help-block' ng-show='registerBuyerForm.businessType.$dirty &&
-            registerBuyerForm.businessType.$error.required'>
-            Please select business type
+            <div class="form-group" ng-class="{'has-error':(
+            registerBuyerForm.phone.$invalid && registerBuyerForm.phone.$dirty ||
+            registerBuyerForm.phone.$invalid && registerBuyerForm.$submitted)}">
+              <label class="control-label">Phone Number</label>
+              <input name ="phone" class="form-control" type="text" ng-model="vm.phone" ng-pattern="/^[\d]*$/" required/>
+              <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
+              registerBuyerForm.phone.$error.required'>
+              Phone number is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.phone.$pristine &&
+              registerBuyerForm.phone.$error.required && registerBuyerForm.$submitted'>
+              Phone number is required
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.phone.$dirty &&
+              registerBuyerForm.phone.$invalid'>
+              Must enter numeric characters
+              </div>
             </div>
-            <div class='help-block' ng-show='registerBuyerForm.businessType.$pristine &&
-            registerBuyerForm.businessType.$error.required && registerBuyerForm.$submitted'>
-            Please select business type
+            <div class="form-group">
+              <label class="control-label">Description (Optional)</label>
+              <textarea class="form-control" type="text" ng-model="vm.desc"/>
+            </div>
+            <div class="form-group" ng-class="{'has-error':(
+            registerBuyerForm.monthlyExpense.$invalid && registerBuyerForm.monthlyExpense.$dirty ||
+            registerBuyerForm.monthlyExpense.$invalid && registerBuyerForm.$submitted)}">
+              <label class="control-label">What is your current monthly expense for produce?</label>
+              <select name="monthlyExpense" class="form-control" ng-model="vm.monthly_expense" required>
+                <option value="" disabled selected>Select Amount</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+              </select>
+              <div class='help-block' ng-show='registerBuyerForm.monthlyExpense.$dirty &&
+              registerBuyerForm.monthlyExpense.$error.required'>
+              Please select monthly expense
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.monthlyExpense.$pristine &&
+              registerBuyerForm.monthlyExpense.$error.required && registerBuyerForm.$submitted'>
+              Please select monthly expense
+              </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error':(
+            registerBuyerForm.businessType.$invalid && registerBuyerForm.businessType.$dirty ||
+            registerBuyerForm.businessType.$invalid && registerBuyerForm.$submitted)}">
+              <label class="control-label">What is your business type?</label>
+              <select name="businessType" class="form-control" ng-model="vm.business_type" required>
+                <option value="" disabled selected>Select Type</option>
+                <option value="a">a</option>
+                <option value="b">b</option>
+              </select>
+              <div class='help-block' ng-show='registerBuyerForm.businessType.$dirty &&
+              registerBuyerForm.businessType.$error.required'>
+              Please select business type
+              </div>
+              <div class='help-block' ng-show='registerBuyerForm.businessType.$pristine &&
+              registerBuyerForm.businessType.$error.required && registerBuyerForm.$submitted'>
+              Please select business type
+              </div>
             </div>
           </div>
         </div>

@@ -1,12 +1,11 @@
-<div class="modal loginUserAccount" tabindex="-1" role="dialog" ng-controller='Login as vm'>
+<div class="loginUserAccount" tabindex="-1">
   <form ng-submit="vm.login(loginForm.$valid )" class="modal-dialog" name="loginForm" novalidate="novalidate">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" ng-click="$hide()">&times;</button>
         <h4 class="modal-title">Login</h4>
       </div>
       <div class="modal-body">
-        <div class='form-group' ng-class="{ 'has-error' : loginForm.email.$invalid &amp;&amp; !loginForm.email.$pristine}">
+        <div class='form-group col-lg-12' ng-class="{ 'has-error' : loginForm.email.$invalid &amp;&amp; !loginForm.email.$pristine}">
           <alert-logIn></alert-logIn>
           <div class="col-xs-12">
             <input class="form-control" type="email" name="email" placeholder="E-mail" required ng-model="vm.email" ng-minlength="0" />
@@ -19,7 +18,7 @@
             Please enter an email address
           </div>
         </div>
-        <div class="form-group" ng-class="{ 'has-error' : loginForm.password.$invalid &amp;&amp; loginForm.password.$dirty}">
+        <div class="form-group col-lg-12" ng-class="{ 'has-error' : loginForm.password.$invalid &amp;&amp; loginForm.password.$dirty}">
           <div class="col-xs-12">
             <input type="password" ng-model="vm.password" name="password" placeholder="Password" required="required" ng-minlength="6" class="form-control"/>
             <span class="glyphicon glyphicon-lock"></span>

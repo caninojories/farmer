@@ -29,6 +29,7 @@
         query   : query,
         message : 'Saving data in Farmer',
         details : {
+          first_name  : query.first_name,
           last_name   : query.last_name,
           email       : query.email,
           password    : query.password,

@@ -163,6 +163,12 @@
     transform: scale(0.7);
   }
 }
+.modal-body-padding {
+  padding: 40px;
+}
+.modal-body-padding {
+  padding: 40px;
+
 #site-wrapper {
   position: relative;
   overflow: hidden;
@@ -203,4 +209,10 @@
 #site-wrapper.show-nav #site-canvas {
   -webkit-transform: translate3d(200px, 0, 0);
   transform: translate3d(200px, 0, 0);
+}
+.user_farmer thead th:first-child {
+  width: 300px;
+}
+.DTTT_container {
+  display: none;
 }
