@@ -7,6 +7,5 @@
   app.route('/login/user')
     .post(io.farmer_login, io.buyer_login, login_.user);
 
-
   module.exports = app;
 }());

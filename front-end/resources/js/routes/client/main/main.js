@@ -5,32 +5,26 @@
     .module('app.main')
     .controller('Main', Main);
 
-    Main.$inject = ['$location', '$rootScope', '$state','$q',
+    Main.$inject = ['$location', '$rootScope', '$state','$q', '$auth',
     'commonsDataService', 'Restangular', 'userServiceApi'];
 
     /* @ngInject */
-    function Main($location, $rootScope, $state, $q, commonsDataService,
+    function Main($location, $rootScope, $state, $q, $auth, commonsDataService,
       Restangular, userServiceApi) {
       var vm = this;
 
       vm.login = login;
 
-      function login(){
-        console.log("login called")
-          $q.all([login_Callback()])
-          .then(function(response){
-            // console.log(response)
-          }) ;
-        }
-        function login_Callback() {
-          return commonsDataService
-            .httpPOSTQueryParams('login/user', {
-                email : vm.email,
-                password : vm.password
-            }, userServiceApi)
-            .then(function(response) {
-              return response;
-            });
+      function login() {
+        $auth.login({
+          email: vm.email,
+          password: vm.password
+        }).then(function(response) {
+          /*success*/
+        }).catch(function(error) {
+          /*error*/
+          console.log('error');
+        });
       }
     }
 }());
