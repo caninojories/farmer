@@ -38,7 +38,7 @@
       extended: true
     }));
     app.use(io.bodyParser.json());
-    app.use(io.multer({ dest: './uploads/',
+    app.use(io.multer({ dest: io.rootPath + 'front-end/resources/uploads',
       rename: function (fieldname, filename) {
         return filename+Date.now();
       },

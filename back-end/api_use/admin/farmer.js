@@ -12,6 +12,9 @@
   app.route('/farmer/status/:id')
     .put(users_farmer_status.farmer_status);
 
+  app.route('/farmer/inventory/image')
+    .post(users_farmer_inventory.farmer_image);
+
   app.route('/farmer/inventory')
     .post(users_farmer_inventory.farmer_inventory);
 
