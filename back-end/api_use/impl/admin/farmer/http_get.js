@@ -21,7 +21,7 @@
       };
 
       io.mongoDB(io.config.dbName)
-        .then(io.get.find.findListData(options));
+        .then(io.get.findListData(options));
     }
   };
 }());

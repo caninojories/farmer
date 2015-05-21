@@ -75,6 +75,7 @@
     css               : path.join(rootPath, 'front-end/resources/css'),
     fonts             : path.join(rootPath, 'front-end/resources/fonts'),
     img               : path.join(rootPath, 'front-end/resources/img'),
+    upload            : path.join(rootPath, 'front-end/resources/uploads'),
     js                : path.join(rootPath, 'front-end/resources/js'),
     compiledCss       : path.join(rootPath, 'front-end/.tmp'),
     bowerComponents   : path.join(rootPath, 'front-end/bower'),

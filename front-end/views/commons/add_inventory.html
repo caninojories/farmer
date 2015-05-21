@@ -19,6 +19,14 @@
                 picss
               </div>
               <div class="row">
+                <div ng-repeat="item in inventory_items">
+                  <div class="col-sm-3">
+                    <img src="/upload/{{item.photo}}" class="img thumbnail"/>
+                    <p>{{item.product_type}}</p>
+                    <p>{{item.variety_name}}</p>
+                  </div>
+                </div>
+
                 <div class="col-lg-12">
                   <table class="table table-condensed">
                     <thead>

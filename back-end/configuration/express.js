@@ -70,6 +70,7 @@
       app.use('/css', io.express.static(io.css));
       app.use('/fonts', io.express.static(io.fonts));
       app.use('/img', io.express.static(io.img));
+      app.use('/upload', io.express.static(io.upload));
       app.use('/js', io.express.static(io.js));
       app.use('/bower', io.express.static(io.bowerComponents));
       app.use('/commons', io.express.static(io.commonViews));
