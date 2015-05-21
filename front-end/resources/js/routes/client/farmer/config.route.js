@@ -17,7 +17,29 @@
           url: '/farmer/inventory',
           templateUrl: '/client/farmer/inventory.html',
           controller: 'Inventory as vm',
-          title: 'Inventory'
+          title: 'Inventory',
+          resolve:{
+            load_items: function($q, $rootScope, commonsDataService, admin_users_service_api) {
+
+              $q.all([load_itemCallback()])
+                .then(function(response) {
+                  $rootScope.totalObj = response[0].data.total;
+                });
+
+                function load_itemCallback() {
+                return commonsDataService
+                  .httpGETQueryParams('item', {}, admin_users_service_api)
+                  .then(function(response) {
+                    return response;
+                  });
+              }
+
+
+
+            }
+
+
+          }
         }
       }, {
           state: 'account_settings',

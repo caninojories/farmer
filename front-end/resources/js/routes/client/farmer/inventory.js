@@ -56,11 +56,19 @@
     }
 
     function add_item(){
-      console.log('save');
+
+      console.log('save item');
       $q.all([add_itemCallback()])
         .then(function(response) {
           console.log(response);
         });
+      strapModal.hide();
+    }
+
+    function save_itemChange(){
+
+      console.log('save item');
+      strapModal.hide();
     }
 
     function add_itemCallback() {
@@ -74,6 +82,9 @@
           return response;
         });
     }
+
+
+
 
   }
 })();
