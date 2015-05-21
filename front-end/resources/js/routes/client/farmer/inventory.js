@@ -38,10 +38,13 @@
     }
     function add_item(){
       console.log('save');
-      $q.all([total_searchCallback()])
-        .then(function(response) {
-          console.log(response);
-        });
+
+            console.log(vm.variety_name);
+                  console.log(vm.photo);
+      // $q.all([total_searchCallback()])
+      //   .then(function(response) {
+      //     console.log(response);
+      //   });
     }
     function total_searchCallback() {
       return commonsDataService

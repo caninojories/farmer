@@ -1,7 +1,7 @@
 <div class="modal" tabindex="-1" role="dialog" ng-controller="Inventory as vm" >
     <div class="modal-dialog">
         <div class="modal-content">
-          <form name="addItemForm" ng-submit="vm.add_item()" novalidate>
+          <form name="addItemForm" method="post" action="farmer/inventory/image" enctype="multipart/form-data" novalidate>
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
             <h4 class="modal-title" >Add unlisted item</h4>
@@ -27,20 +27,20 @@
                       addItemForm.photo.$dirty) || (addItemForm.photo.$invalid &&
                       addItemForm.$submitted)}">
                   <label class="control-label">Photo</label>
-                  <input type="file" name="photo" class="form-control input-md"  ng-model='vm.photo' >
+                  <input type="file" id="photo" name="photo" class="form-control input-md"  ng-model='vm.photo' >
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.produvt_type.$invalid &&
-                      addItemForm.produvt_type.$dirty) || (addItemForm.produvt_type.$invalid &&
+                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.product_type.$invalid &&
+                      addItemForm.product_type.$dirty) || (addItemForm.product_type.$invalid &&
                       addItemForm.$submitted)}">
                   <label class="control-label">Product Type</label>
-                  <input type="text" name="produvt_type" class="form-control input-md"  ng-model='vm.produvt_type' required>
-                  <div class='help-block' ng-show='addItemForm.produvt_type.$dirty &&
-                    addItemForm.produvt_type.$error.required'>
+                  <input type="text" name="product_type" class="form-control input-md"  ng-model='vm.product_type' required>
+                  <div class='help-block' ng-show='addItemForm.product_type.$dirty &&
+                    addItemForm.product_type.$error.required'>
                     Variety Name is required
                   </div>
-                  <div class='help-block' ng-show='addItemForm.produvt_type.$pristine &&
-                    addItemForm.produvt_type.$error.required && addItemForm.$submitted'>
+                  <div class='help-block' ng-show='addItemForm.product_type.$pristine &&
+                    addItemForm.product_type.$error.required && addItemForm.$submitted'>
                     Variety Name is required
                   </div>
                 </div>
