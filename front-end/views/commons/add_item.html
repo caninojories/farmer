@@ -1,7 +1,7 @@
 <div class="modal" tabindex="-1" role="dialog" ng-controller="Inventory as vm" >
     <div class="modal-dialog">
         <div class="modal-content">
-          <form name="addItemForm" method="post" action="farmer/inventory/image" enctype="multipart/form-data" novalidate>
+
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
             <h4 class="modal-title" >Add unlisted item</h4>
@@ -22,11 +22,12 @@
                     Variety Name is required
                   </div>
                 </div>
-
-                <div class="form-group">
-                  <label class="control-label">Photo</label>
-                  <input type="file" id="photo" name="photo" class="form-control input-md"  ng-model='vm.photo' >
-                </div>
+                <form name="addItemForm" method="post" action="farmer/inventory/image" enctype="multipart/form-data" novalidate>
+                  <div class="form-group">
+                    <label class="control-label">Photo</label>
+                    <input type="file" id="photo" name="photo" class="form-control input-md"  ng-model='vm.photo' >
+                  </div>
+                </form>
 
                 <div class="form-group" ng-class="{ 'has-error' : (addItemForm.product_type.$invalid &&
                       addItemForm.product_type.$dirty) || (addItemForm.product_type.$invalid &&
@@ -50,7 +51,7 @@
             <div class="modal-footer">
                 <button type='submit' class='btn btn-primary text-center'>Save</button>
         </div>
-      </form>
+
     </div>
   </div>
 </div>
