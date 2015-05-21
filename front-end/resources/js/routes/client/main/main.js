@@ -6,11 +6,11 @@
     .controller('Main', Main);
 
     Main.$inject = ['$location', '$rootScope', '$state','$q',
-    'commonsDataService', 'Restangular'];
+    'commonsDataService', 'Restangular', 'userServiceApi'];
 
     /* @ngInject */
     function Main($location, $rootScope, $state, $q, commonsDataService,
-      Restangular) {
+      Restangular, userServiceApi) {
       var vm = this;
 
       vm.login = login;
@@ -27,7 +27,7 @@
             .httpPOSTQueryParams('login/user', {
                 email : vm.email,
                 password : vm.password
-            }, Restangular)
+            }, userServiceApi)
             .then(function(response) {
               return response;
             });
