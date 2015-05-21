@@ -19,16 +19,20 @@
           controller: 'Inventory as vm',
           title: 'Inventory',
           resolve:{
-            load_items: function($q, $rootScope, commonsDataService, admin_users_service_api) {
+            load_items: function($q, $scope, $timeout, commonsDataService, admin_users_service_api) {
 
               $q.all([load_itemCallback()])
                 .then(function(response) {
-                  $rootScope.totalObj = response[0].data.total;
+                  $timeout(function() {
+                    $scope.inventory_items = response[0].data;
+                  }, 0);
+                  console.log($scope.inventory);
+                  return;
                 });
 
                 function load_itemCallback() {
                 return commonsDataService
-                  .httpGETQueryParams('item', {}, admin_users_service_api)
+                  .httpGETQueryParams('farmer/inventory', {}, admin_users_service_api)
                   .then(function(response) {
                     return response;
                   });
