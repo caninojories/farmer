@@ -31,7 +31,7 @@
         state: 'admin_users_buyer',
         config: {
           url: '/admin/user/buyer',
-          templateUrl: '/admin/users/farmer.html',
+          templateUrl: '/admin/users/buyer.html',
           controller: 'User_Buyer as vm',
           title: 'Buyer User'
         }
