@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  module.exports = function(node, email, res) {
+  module.exports = function(node, email, res, document) {
     var model = {
       verifyEmail : 'https://hauangelite.herokuapp.com/user/verify/',
       title       : 'NOTIFY',
@@ -34,7 +34,11 @@
         return err;
       }
       console.log('email sent ' + info.response);
-      res.json('success');
+      res.json({
+        message: 'Signup',
+        status : 200,
+        data   : document
+      });
     });
 
     function getHtml(token) {

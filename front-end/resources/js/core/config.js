@@ -26,9 +26,9 @@
     function registerNsignInConfig($authProvider, cfpLoadingBarProvider) {
       cfpLoadingBarProvider.latencyThreshold = 100;
       console.log(window.location.origin);
-      $authProvider.loginUrl    = window.location.origin + '/userApi/userLogIn';
+      $authProvider.loginUrl    = window.location.origin + '/userApi/login/user';
       $authProvider.signupUrl   = window.location.origin + '/userApi/userRegister';
-      $authProvider.tokenPrefix = 'magens';
+      $authProvider.tokenPrefix = 'locaverse';
 
       $authProvider.facebook({
         clientId: '789445017793242',

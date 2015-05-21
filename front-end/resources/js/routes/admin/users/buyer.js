@@ -11,7 +11,7 @@
     /*@ngInject*/
     function User_Buyer($compile, $scope, $window, DTOptionsBuilder, DTColumnBuilder, DTInstances) {
       var vm = this;
-
+      console.log('buyer');
       $scope.dtOptions = DTOptionsBuilder
         .fromSource($window.location.origin + '/admin_users_Api/buyer/list')
         .withTableTools('/js/vendor/table-tools/swf/copy_csv_xls_pdf.swf')
@@ -23,7 +23,7 @@
         $scope.dtColumns = [
           DTColumnBuilder.newColumn(null).withTitle('Actions').notSortable()
           .renderWith(function(data, type, full, meta) {
-            return '<select select-approved-users=' + data.status + ' data-toggle="select"' +
+            return '<select select-approved-users-buyer=' + data.status + ' data-toggle="select"' +
             'class="form-control select select-primary select-xs" data-id=' + data._id.toString() + '>' +
               '<option value="Approved">Approved</option>' +
               '<option value="Pending">Pending</option>' +
@@ -33,9 +33,5 @@
           DTColumnBuilder.newColumn('email').withTitle('Email').notSortable(),
           DTColumnBuilder.newColumn('company_name').withTitle('Company Name').notSortable()
         ];
-
-      return DTInstances.getLast().then(function (dtInstance) {
-        vm.dtInstance = dtInstance;
-      });
     }
 }());

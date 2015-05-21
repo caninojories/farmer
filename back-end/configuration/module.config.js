@@ -20,7 +20,7 @@
     error             : require(service + './error'),
     facebookAuth      : require(service + './facebookAuth'),
     farmer_login      : require(service + './farmer_login'),
-    buyer_login       : require(service + './farmer_login'),
+    buyer_login       : require(service + './buyer_login'),
     get               : require(service + './get'),
     save              : require(service + './save'),
     update            : require(service + './update'),

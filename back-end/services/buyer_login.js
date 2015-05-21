@@ -2,19 +2,20 @@
   'use strict';
 
   module.exports = function(req, res, next) {
-
     if(req.status === 200) {
+      console.log('200 user');
       return next();
     }
 
     if(req.status_data === 'Pending') {
+      console.log('pending user');
       return next();
     }
 
     var email     = req.body.email,
         password  = req.body.password;
-    io.mongoDB(io.config.dbName)
-      .then(findUser);
+
+    findUser();
 
     function findUser() {
       io.Buyer.findOne({

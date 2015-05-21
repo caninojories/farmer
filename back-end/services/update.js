@@ -8,6 +8,8 @@
       .then(details)
       .then(function(result) {
         result.save(function(err, result) {
+          console.log(err);
+          console.log(result);
           if (err) {return;}
           io.notify_approved_by_email(io, result.email, options.res);
         });
