@@ -42,6 +42,7 @@
           }, signupServiceApi)
           .then(function(response) {
             /* success */
+            $rootScope.signup_success = true;
             $state.go('signup');
           }).catch(function(error) {
             /*error*/
