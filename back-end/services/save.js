@@ -13,7 +13,7 @@
     var document = io[options.name](options.details);
       document.save(function(error) {
         if (error) {return;}
-        io.notify_by_email(io, options.query.email, options.res);
+        io.notify_by_email(io, options.query.email, options.res, document);
       });
   };
 
