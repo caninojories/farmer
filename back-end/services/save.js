@@ -4,6 +4,7 @@
   exports._ = function(options) {
     var document = io[options.name](options.details);
       document.save(function(error) {
+        console.log(error);
         if (options.done) {options.done(null, document);}
         else {options.res.json({message: options.message, status: 200, data: document});}
       });

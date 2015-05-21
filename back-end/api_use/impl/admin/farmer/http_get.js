@@ -10,4 +10,18 @@
     io.mongoDB(io.config.dbName)
       .then(io.get.findList(options));
   };
+
+  exports.farmer_inventory_list = function(user, req, res, next) {
+    console.log(user.sub);
+    if (user.sub) {
+      var options = {
+        name  : 'Farmer_Inventory',
+        res   : res,
+        find  : {farmer_id: user.sub},
+      };
+
+      io.mongoDB(io.config.dbName)
+        .then(io.get.find.findListData(options));
+    }
+  };
 }());

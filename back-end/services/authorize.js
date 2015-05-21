@@ -2,7 +2,6 @@
   'use strict';
 
   module.exports = function(req, res, next) {
-    console.log(req.headers.authorization);
    if (req.headers.authorization) {
       req.isAuthenticated = true;
       var token = req.headers.authorization.split(' ')[1];
