@@ -16,7 +16,7 @@
     .post(users_farmer_inventory.farmer_image);
 
   app.route('/farmer/inventory')
-    .post(users_farmer_inventory.farmer_inventory);
+    .post(io.authorize, users_farmer_inventory.farmer_inventory);
 
   module.exports = app;
 }());

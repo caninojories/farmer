@@ -41,11 +41,11 @@
           }, signupServiceApi)
           .then(function(response) {
             $rootScope.signup_success = true;
-            $state.go('signup')
+            $state.go('signup');
           }).catch(function(error) {
             /*error*/
             console.log('error');
-          });;
+          });
       }
 
     }

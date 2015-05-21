@@ -1,9 +1,11 @@
 (function() {
   'use strict';
 
-  exports.farmer_inventory = function(req, res, next) {
-    // io.mongoDB(io.config.dbName)
-    //   .then(io.get.findList(options));
+  exports.farmer_inventory = function(req, res, next, user) {
+    var body = req.body;
+
+    console.log(body);
+    console.log(user);
   };
 
   exports.farmer_image = function(req, res, next) {
