@@ -1,0 +1,40 @@
+<div class="modal" tabindex="-1" role="dialog" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4 class="modal-title" >Add Inventory</h4>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-lg-8">
+                  <input type="text" name="search"  placeholder="Search" class="form-control input-sm"  ng-model='vm.search'>
+                </div>
+                <div class="col-lg-4">
+                  <a href="" ng-click="vm.add_item()"><p>Add unlisted item</p></a>
+                </div>
+              </div>
+              <div class="row">
+                <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>Quantity</th>
+                      <th>lbs</th>
+                      <th>Case</th>
+                      <th>lbs</th>
+                      <th>Price</th>
+                      <th>$/lb</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+    </div>
+  </div>
+</div>
