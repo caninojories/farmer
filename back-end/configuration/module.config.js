@@ -29,6 +29,7 @@
     googleAuth        : require(service + './googleAuth'),
     User              : require('../model/User'),
     Farmer            : require('../model/Farmer'),
+    Farmer_Inventory  : require('../model/Farmer_Inventory'),
     Buyer             : require('../model/Buyer'),
     mongoDB           : require('../configuration/mongodb'),
     xPoweredBy        : require(service + './xPoweredBy'),
