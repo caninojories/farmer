@@ -40,6 +40,7 @@
             farm_size:vm.ffarm_size
           }, signupServiceApi)
           .then(function(response) {
+            $rootScope.signup_success = true;
             $state.go('signup')
           }).catch(function(error) {
             /*error*/
