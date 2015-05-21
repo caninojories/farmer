@@ -1,31 +1,58 @@
-<div class="modal" tabindex="-1" role="dialog" >
+<div class="modal" tabindex="-1" role="dialog" ng-controller="Inventory as vm" >
     <div class="modal-dialog">
         <div class="modal-content">
+          <form name="addItemForm" ng-submit="vm.add_item()" novalidate>
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
             <h4 class="modal-title" >Add unlisted item</h4>
             </div>
             <div class="modal-body modal-body-padding">
-              <div class="form-horizontal">
-                <form name="addItemForm" ng-submit="vm.add_item()" novalidate>
-                  <div class="form-group">
-                    <label class="control-label">Variety Name</label>
-                    <input type="text" name="variety_name" class="form-control input-md"  ng-model='vm.fvariety_name' required>
+              <div class="form-horizontal" >
+                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.variety_name.$invalid &&
+                      addItemForm.variety_name.$dirty) || (addItemForm.variety_name.$invalid &&
+                      addItemForm.$submitted)}">
+                  <label class="control-label">Variety Name</label>
+                  <input type="text" name="variety_name" class="form-control input-md"  ng-model='vm.variety_name' required>
+                  <div class='help-block' ng-show='addItemForm.variety_name.$dirty &&
+                    addItemForm.variety_name.$error.required'>
+                    Variety Name is required
                   </div>
-                  <div class="form-group">
-                    <label class="control-label">Photo</label>
-                    <input type="text" name="variety_name" class="form-control input-md"  ng-model='vm.fvariety_name' required>
+                  <div class='help-block' ng-show='addItemForm.variety_name.$pristine &&
+                    addItemForm.variety_name.$error.required && addItemForm.$submitted'>
+                    Variety Name is required
                   </div>
-                  <div class="form-group">
-                    <label class="control-label">Product Type</label>
-                    <input type="text" name="product_type" class="form-control input-md"  ng-model='vm.product_type'>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.photo.$invalid &&
+                      addItemForm.photo.$dirty) || (addItemForm.photo.$invalid &&
+                      addItemForm.$submitted)}">
+                  <label class="control-label">Photo</label>
+                  <input type="file" name="photo" class="form-control input-md"  ng-model='vm.photo' >
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.produvt_type.$invalid &&
+                      addItemForm.produvt_type.$dirty) || (addItemForm.produvt_type.$invalid &&
+                      addItemForm.$submitted)}">
+                  <label class="control-label">Product Type</label>
+                  <input type="text" name="produvt_type" class="form-control input-md"  ng-model='vm.produvt_type' required>
+                  <div class='help-block' ng-show='addItemForm.produvt_type.$dirty &&
+                    addItemForm.produvt_type.$error.required'>
+                    Variety Name is required
                   </div>
-                </form>
+                  <div class='help-block' ng-show='addItemForm.produvt_type.$pristine &&
+                    addItemForm.produvt_type.$error.required && addItemForm.$submitted'>
+                    Variety Name is required
+                  </div>
+                </div>
+
+
               </div>
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type='submit' class='btn btn-primary text-center'>Save</button>
         </div>
+      </form>
     </div>
   </div>
 </div>
