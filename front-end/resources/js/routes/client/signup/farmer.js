@@ -5,10 +5,10 @@
     .module('app.signup')
     .controller('Farmer', Farmer);
 
-    Farmer.$inject = ['$rootScope', 'commonsDataService','$q','signupServiceApi'];
+    Farmer.$inject = ['$rootScope', 'commonsDataService','$q', '$state', 'signupServiceApi'];
 
     /* @ngInject */
-    function Farmer($rootScope, commonsDataService, $q,signupServiceApi) {
+    function Farmer($rootScope, commonsDataService, $q, $state, signupServiceApi) {
       var vm = this;
 
       /*literals*/
@@ -40,8 +40,11 @@
             farm_size:vm.ffarm_size
           }, signupServiceApi)
           .then(function(response) {
-            return response;
-          });
+            $state.go('signup')
+          }).catch(function(error) {
+            /*error*/
+            console.log('error');
+          });;
       }
 
     }
