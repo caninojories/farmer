@@ -5,11 +5,11 @@
   .module('app.farmer')
   .controller('Inventory', Inventory);
 
-  Inventory.$inject = ['$scope', '$q', 'admin_users_service_api', 'commonsDataService',
+  Inventory.$inject = ['$q', '$scope',  'admin_users_service_api', 'commonsDataService',
   'strapModal', 'Upload'];
 
   /* @ngInject */
-  function Inventory($scope, $q, admin_users_service_api, commonsDataService,
+  function Inventory($q, $scope, admin_users_service_api, commonsDataService,
   strapModal, Upload) {
     var vm = this;
 
@@ -57,9 +57,13 @@
 
     function add_item(){
       console.log('save');
+      $q.all([add_itemCallback()])
+        .then(function(response) {
+          console.log(response);
+        });
     }
 
-    function total_searchCallback() {
+    function add_itemCallback() {
       return commonsDataService
         .httpPOSTQueryParams('farmer/inventory', {
           variety_name  : vm.variety_name,
