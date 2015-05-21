@@ -5,10 +5,10 @@
     .module('app.signup')
     .controller('Farmer', Farmer);
 
-    Farmer.$inject = ['$rootScope', 'commonsDataService','$q', '$state', 'signupServiceApi'];
+    Farmer.$inject = ['$q', '$rootScope', '$state', 'commonsDataService',  'signupServiceApi'];
 
     /* @ngInject */
-    function Farmer($rootScope, commonsDataService, $q, $state, signupServiceApi) {
+    function Farmer($q, $rootScope, $state, commonsDataService,   signupServiceApi) {
       var vm = this;
 
       /*literals*/
@@ -18,12 +18,12 @@
 
       function register_farmer(){
         console.log('farmer');
-        $q.all([total_searchCallback()])
+        $q.all([register_farmerCallback()])
           .then(function(response) {
             console.log(response);
           });
       }
-      function total_searchCallback() {
+      function register_farmerCallback() {
         return commonsDataService
           .httpPOSTQueryParams('signup/farmer', {
             first_name : vm.ffirst_name,
@@ -40,11 +40,11 @@
             farm_size:vm.ffarm_size
           }, signupServiceApi)
           .then(function(response) {
-            $state.go('signup')
+            $state.go('signup');
           }).catch(function(error) {
             /*error*/
             console.log('error');
-          });;
+          });
       }
 
     }
