@@ -12,6 +12,7 @@
       var service = {
         httpGETQueryParams    : httpGETQueryParams,
         httpPOSTQueryParams   : httpPOSTQueryParams,
+        httpPUTRouteParams    : httpPUTRouteParams,
         authorize : authorize,
         checkEmail: checkEmail
       };
@@ -45,6 +46,19 @@
         function httpPOSTQueryParamsCallback(response, status, header, config) {
           return Restangular.stripRestangular(response);
         }
+      }
+      
+      function httpPUTRouteParams(api, routeUrl, param, apiService) {
+        return apiService.one(api, routeUrl)
+          .put(param)
+          .then(httpPUTRouteParamsCallback)
+          .catch(function(message) {
+
+          });
+
+          function httpPUTRouteParamsCallback(response, status, header, config) {
+            return Restangular.stripRestangular(response);
+          }
       }
 
       function authorize() {
