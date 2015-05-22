@@ -1,5 +1,11 @@
 .main_ .login_ .modal-content {
   box-shadow: none;
+  position: fixed;
+  top: 45%;
+  left: 50%;
+/* bring your own prefixes */
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .header .ion-ios-home {
   font-size: 24px;
