@@ -22,6 +22,11 @@
 
       io.mongoDB(io.config.dbName)
         .then(io.get.findListData(options));
+    } else {
+      res.json({
+        message : 'No Inventory Present',
+        status  : 200
+      });
     }
   };
 }());
