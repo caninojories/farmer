@@ -1,6 +1,6 @@
 (function() {
   'use strict';
 
-  angular.module('app.farmer', ['ngFileUpload']);
+  angular.module('app.farmer', ['ngFileUpload','multipleDatePicker']);
 
 })();
