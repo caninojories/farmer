@@ -6,11 +6,11 @@
   .controller('Inventory', Inventory);
 
   Inventory.$inject = ['$q', '$scope',  'admin_users_service_api', 'commonsDataService',
-  'strapModal', 'Upload'];
+  'strapModal', 'Upload', 'viewContentLoaded'];
 
   /* @ngInject */
   function Inventory($q, $scope, admin_users_service_api, commonsDataService,
-  strapModal, Upload) {
+  strapModal, Upload, viewContentLoaded) {
     var vm = this;
 
     /*Literals assignment*/
@@ -20,6 +20,8 @@
     vm.add_item_link  = add_item_link;
     vm.add_item       = add_item;
     vm.upload         = upload;
+    vm.save_itemChange = save_itemChange;
+
 
     $scope.$watch('vm.files', function () {
       upload(vm.files);

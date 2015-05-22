@@ -12,9 +12,9 @@
       ** Sample external jquery call
       ***/
       return {
-        loadScript : function loadScript() {
+        date_picker : function loadScript() {
           $rootScope.$on('$viewContentLoaded', function() {
-            jcaLayout.fullPage();
+            jcaLayout.date_picker();
           });
         },
         carouselScript : function carouselScript() {

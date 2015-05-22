@@ -1,10 +1,10 @@
-<div class="modal" tabindex="-1" role="dialog" ng-controller="Inventory as vm" >
+<div class="modal" tabindex="-1" role="dialog" ng-controller="Add_Inventory as vm" >
     <div class="modal-dialog">
+      <form name="save_itemchangeForm" ng-submit="vm.save_itemChange()" novalidate>
         <div class="modal-content">
-          <form name="save_itemchangeForm" ng-submit="vm.save_itemChange()" novalidate>
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="$hide()">x</button>
-            <h4 class="modal-title" >Add Inventory</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="$hide()">x</button>
+              <h4 class="modal-title" >Add Inventory</h4>
             </div>
             <div class="modal-body">
               <div class="row">
@@ -15,9 +15,7 @@
                   <a href="" ng-click="vm.add_item_link()"><p>Add unlisted item</p></a>
                 </div>
               </div>
-              <div>
-                picss
-              </div>
+
               <div class="row">
                 <div ng-repeat="item in inventory_items">
                   <div class="col-sm-3">
@@ -25,35 +23,33 @@
                     <p>{{item.product_type}}</p>
                     <p>{{item.variety_name}}</p>
                   </div>
+                </div>
                 <div class="form-group">
                   <label class="control-label col-lg-3">Quantity</label>
                   <div class="col-lg-1">
                     <input type="text" name="quantity" class="form-control input-md"  ng-model='vm.quantity' placeholder="lbs" required>
                   </div>
-
                   <label class="control-label col-lg-3">Case</label>
                   <div class="col-lg-1">
                     <input type="text" name="case" class="form-control input-md"  ng-model='vm.case' placeholder="lbs" required>
                   </div>
-
                   <label class="control-label col-lg-3">Price</label>
                   <div class="col-lg-1">
                     <input type="text" name="price" class="form-control input-md"  ng-model='vm.price' placeholder="$/lb" required>
                   </div>
-
                 </div>
                 <div class="row">
-                  <p>Select days you are able to ship</p>
-                  <div class="col-lg-3">
-                    <multiple-date-picker day-click="logInfos" day-hover="logInfos" sunday-first-day="true" week-days-off="[0, 5,6]"/>
-                  </div>
+
                 </div>
+              </div>
+              <div class="row">
+                <div date-picker-selector ></div>
               </div>
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Save changes</button>
+                <input type="submit" class="btn btn-primary" value="Save Changes"/>
+            </div>
         </div>
       </form>
-    </div>
   </div>
 </div>
