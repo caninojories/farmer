@@ -19,20 +19,7 @@
           controller: 'Inventory as vm',
           title: 'Inventory',
           resolve:{
-            load_items: function($q, $rootScope, commonsDataService, admin_users_service_api) {
-              $q.all([load_itemCallback()])
-                .then(function(response) {
-                  $rootScope.inventory_items = response[0].data;
-                });
-
-              function load_itemCallback() {
-                return commonsDataService
-                  .httpGETQueryParams('farmer/inventory', {}, admin_users_service_api)
-                  .then(function(response) {
-                    return response;
-                  });
-              }
-            }
+      
           }
         }
       }, {

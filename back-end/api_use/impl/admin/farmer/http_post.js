@@ -14,10 +14,7 @@
         farmer_id     : user.sub,
         variety_name  : query.variety_name,
         photo         : query.photo,
-        product_type  : query.product_type,
-        quantity      : query.quantity || 0,
-        case          : query.case || 0,
-        price         : query.price || 0
+        product_type  : query.product_type
       }
     };
 

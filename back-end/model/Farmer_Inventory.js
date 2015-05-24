@@ -11,7 +11,9 @@
     product_type      : String,
     quantity          : Number,
     case              : Number,
-    price             : Number
+    price             : Number,
+    attachments       : String,
+    comments          : String
   });
 
   module.exports = mongoose.model('Farmer_Inventory', Farmer_Inventory);

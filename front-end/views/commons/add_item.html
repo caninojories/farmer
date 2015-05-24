@@ -1,60 +1,55 @@
-<div class="modal" tabindex="-1" role="dialog" ng-controller="Inventory as vm" >
+<div class="modal" tabindex="-1" role="dialog" ng-controller="Add_Inventory_Item as vm" >
+  <form name="addItemForm" ng-submit="vm.add_inventory_item()" novalidate>
     <div class="modal-dialog">
-        <div class="modal-content">
-          <form name="addItemForm" ng-submit="vm.add_item()" novalidate>
-            <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="$hide()" >x</button>
-            <h4 class="modal-title" >Add unlisted item</h4>
-            </div>
-            <div class="modal-body modal-body-padding">
-              <div class="form-horizontal" >
-                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.variety_name.$invalid &&
-                      addItemForm.variety_name.$dirty) || (addItemForm.variety_name.$invalid &&
-                      addItemForm.$submitted)}">
-                  <label class="control-label">Variety Name</label>
-                  <input type="text" name="variety_name" class="form-control input-md"  ng-model='vm.variety_name' required>
-                  <div class='help-block' ng-show='addItemForm.variety_name.$dirty &&
-                    addItemForm.variety_name.$error.required'>
-                    Variety Name is required
-                  </div>
-                  <div class='help-block' ng-show='addItemForm.variety_name.$pristine &&
-                    addItemForm.variety_name.$error.required && addItemForm.$submitted'>
-                    Variety Name is required
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="control-label">Photo</label>
-                  <div class="button btn btn-primary" ngf-select ng-model="vm.files">upload photo</div>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.percentage}}">
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group" ng-class="{ 'has-error' : (addItemForm.product_type.$invalid &&
-                      addItemForm.product_type.$dirty) || (addItemForm.product_type.$invalid &&
-                      addItemForm.$submitted)}">
-                  <label class="control-label">Product Type</label>
-                  <input type="text" name="product_type" class="form-control input-md"  ng-model='vm.product_type' required>
-                  <div class='help-block' ng-show='addItemForm.product_type.$dirty &&
-                    addItemForm.product_type.$error.required'>
-                    Variety Name is required
-                  </div>
-                  <div class='help-block' ng-show='addItemForm.product_type.$pristine &&
-                    addItemForm.product_type.$error.required && addItemForm.$submitted'>
-                    Variety Name is required
-                  </div>
-                </div>
-
-
-              </div>
-
-            </div>
-            <div class="modal-footer">
-              <button type='submit' class='btn btn-primary text-center'>Save</button>
-            </div>
-          </form>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="$hide()" >x</button>
+          <h4 class="modal-title" >Add unlisted item</h4>
         </div>
-  </div>
+        <div class="modal-body">
+          <div class="form-horizontal" >
+            <div class="form-group col-lg-12" ng-class="{ 'has-error' : (addItemForm.variety_name.$invalid &&
+            addItemForm.variety_name.$dirty) || (addItemForm.variety_name.$invalid &&
+            addItemForm.$submitted)}">
+              <label class="control-label">Variety Name</label>
+              <input type="text" name="variety_name" class="form-control input-md"  ng-model='vm.variety_name' required>
+              <div class='help-block' ng-show='addItemForm.variety_name.$dirty &&
+              addItemForm.variety_name.$error.required'>
+                Variety Name is required
+              </div>
+              <div class='help-block' ng-show='addItemForm.variety_name.$pristine &&
+              addItemForm.variety_name.$error.required && addItemForm.$submitted'>
+                Variety Name is required
+              </div>
+            </div>
+            <div class="form-group col-lg-12">
+              <div class="button btn btn-primary" ngf-select ng-model="vm.files">upload photo</div>
+              <p><span class="label label-success" ng-show="vm.success  === true">Success</span></p>
+              <div class="progress" ng-show="vm.show_progress_bar">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: {{vm.percentage}}">
+                </div>
+              </div>
+            </div>
+            <div class="form-group col-lg-12" ng-class="{ 'has-error' : (addItemForm.product_type.$invalid &&
+            addItemForm.product_type.$dirty) || (addItemForm.product_type.$invalid &&
+            addItemForm.$submitted)}">
+              <label class="control-label">Product Type</label>
+              <input type="text" name="product_type" class="form-control input-md"  ng-model='vm.product_type' required>
+              <div class='help-block' ng-show='addItemForm.product_type.$dirty &&
+                addItemForm.product_type.$error.required'>
+                Variety Name is required
+              </div>
+              <div class='help-block' ng-show='addItemForm.product_type.$pristine &&
+                addItemForm.product_type.$error.required && addItemForm.$submitted'>
+                Variety Name is required
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type='submit' class='btn btn-primary text-center'>Save</button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>

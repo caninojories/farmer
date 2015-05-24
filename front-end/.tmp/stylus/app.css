@@ -1,11 +1,12 @@
+.main_ .login_ {
+  position: fixed;
+  top: 25%;
+  left: 35%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
 .main_ .login_ .modal-content {
   box-shadow: none;
-  position: fixed;
-  top: 45%;
-  left: 50%;
-/* bring your own prefixes */
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
 }
 .header .ion-ios-home {
   font-size: 24px;
@@ -172,8 +173,32 @@
 .modal-body-padding {
   padding: 40px;
 }
-.modal-body-padding {
-  padding: 40px;
+.add_inventory {
+  overflow: auto;
+}
+.add_inventory .modal-body {
+  padding: 0;
+}
+.add_inventory .modal-body .padding {
+  padding-top: 10px;
+}
+.add_inventory .items {
+  height: 300px;
+  overflow: scroll;
+}
+.add_inventory .items .img-responsive {
+  margin: 0 auto;
+}
+.add_inventory .items .product_type {
+  margin: 0;
+  font-size: 14px;
+}
+.add_inventory .items .variety_name {
+  margin: 0;
+  font-size: 14px;
+}
+.add_inventory .item_description {
+  padding-top: 10px;
 }
 #site-wrapper {
   position: relative;

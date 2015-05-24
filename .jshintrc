@@ -58,6 +58,7 @@
         "angular": false,
         "appRequire": false,
         "io": false,
+        "moment": false,
         "jcaLayout": false,
         "$": false
     }
