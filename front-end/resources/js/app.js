@@ -22,6 +22,7 @@
          */
         //'app.avengers',
         'app.main',
+        'app.marketplace',
         'app.signup',
         'app.sample',
         'app.farmer',

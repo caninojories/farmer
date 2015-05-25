@@ -1,0 +1,11 @@
+
+  <section ng-include="'commons/header.html'"></section>
+  <div class="market_place">
+    <div class="col-sm-2 item_list" ng-repeat="item in marketplace_data">
+      <a href="">
+        <img class="img-thumbnail" src="/upload/{{item.photo}}"/>
+      </a>
+      <p class="product_type">{{item.product_type}}</p>
+      <p class="variety_name">{{item.variety_name}}</p>
+    </div>
+  </div>

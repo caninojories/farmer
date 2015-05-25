@@ -1,12 +1,20 @@
-.main_ .login_ {
+.main_ {
   position: fixed;
   top: 25%;
   left: 35%;
   margin-top: -50px;
   margin-left: -100px;
 }
-.main_ .login_ .modal-content {
+.main_ .modal-content {
   box-shadow: none;
+}
+.market_place .item_list .product_type {
+  margin: 0;
+  font-size: 14px;
+}
+.market_place .item_list .variety_name {
+  margin: 0;
+  font-size: 14px;
 }
 .header .ion-ios-home {
   font-size: 24px;
@@ -199,6 +207,12 @@
 }
 .add_inventory .item_description {
   padding-top: 10px;
+}
+.signup_buyer .modal-content {
+  box-shadow: none;
+}
+.signup_farmer .modal-content {
+  box-shadow: none;
 }
 #site-wrapper {
   position: relative;

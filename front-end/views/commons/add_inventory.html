@@ -1,5 +1,5 @@
 <div class="modal add_inventory" tabindex="-1" role="dialog" ng-controller="Add_Inventory as vm" >
-  <form name="save_itemchangeForm" ng-submit="vm.save_item_details()" novalidate>
+  <form name="save_itemchangeForm" ng-submit="vm.add_inventory()" novalidate>
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -17,7 +17,7 @@
           </div>
             <div class="container-fluid items">
               <div class="col-sm-4" ng-repeat=" item in vm.inventory_items" style="position: relative">
-                <a href="" ng-click="vm.item_details()">
+                <a href="" ng-click="vm.item_details(item._id)">
                   <img class="img-thumbnail" src="/upload/{{item.photo}}" style="width: 150px;height:150px"/>
                 </a>
                 <p class="product_type">{{item.product_type}}</p>

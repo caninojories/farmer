@@ -6,11 +6,11 @@
     .controller('Main', Main);
 
     Main.$inject = ['$location', '$rootScope', '$state','$q', '$auth',
-    'commonsDataService', 'Restangular', 'userServiceApi'];
+    'commonsDataService', 'logger', 'userServiceApi'];
 
     /* @ngInject */
     function Main($location, $rootScope, $state, $q, $auth, commonsDataService,
-      Restangular, userServiceApi) {
+      logger, userServiceApi) {
       var vm = this;
 
       vm.login = login;
@@ -21,9 +21,9 @@
           password: vm.password
         }).then(function(response) {
           /*success*/
-        }).catch(function(error) {
-          /*error*/
-          console.log('error');
+        }).catch(function(err) {
+          console.log(err);
+          logger.error(err.data.message);
         });
       }
     }

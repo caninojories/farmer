@@ -9,7 +9,9 @@
 
     if(req.status_data === 'Pending') {
       console.log('pending user');
-      return next();
+      var err     = new Error('Pending Account');
+      err.status  = 401;
+      return next(err);
     }
 
     var email     = req.body.email,

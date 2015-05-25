@@ -11,7 +11,9 @@
     function commonsDataService(authToken, exception, Restangular, userInfoServiceApi) {
       var service = {
         httpGETQueryParams    : httpGETQueryParams,
+        httpGETRouteParams    : httpGETRouteParams,
         httpPOSTQueryParams   : httpPOSTQueryParams,
+        httpPUTQueryParams    : httpPOSTQueryParams,
         httpPUTRouteParams    : httpPUTRouteParams,
         authorize : authorize,
         checkEmail: checkEmail
@@ -21,6 +23,19 @@
       function httpGETQueryParams(api, queryParam, apiService) {
         return apiService.one(api)
           .get(queryParam)
+          .then(httpGETQueryParamsCallback)
+          .catch(function(message) {
+
+          });
+
+        function httpGETQueryParamsCallback(response, status, header, config) {
+          return Restangular.stripRestangular(response);
+        }
+      }
+
+      function httpGETRouteParams(api, routeUrl, param, apiService) {
+        return apiService.one(api, routeUrl)
+          .get(param)
           .then(httpGETQueryParamsCallback)
           .catch(function(message) {
 
@@ -47,7 +62,20 @@
           return Restangular.stripRestangular(response);
         }
       }
-      
+
+      function httpPUTQueryParams(api, param, apiService) {
+        return apiService.one(api)
+          .put(param)
+          .then(httpPUTRouteParamsCallback)
+          .catch(function(message) {
+
+          });
+
+          function httpPUTRouteParamsCallback(response, status, header, config) {
+            return Restangular.stripRestangular(response);
+          }
+      }
+
       function httpPUTRouteParams(api, routeUrl, param, apiService) {
         return apiService.one(api, routeUrl)
           .put(param)

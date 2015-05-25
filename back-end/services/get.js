@@ -16,10 +16,12 @@
     return io[options.name]
       .find(options.find || {})
       .sort(options.sort || {})
-      .exec()
+      .exec(function(err, result) {
+        return result;
+      })
       .then(function(result) {
         options.res.json({
-          message : 'Retrieving data from farmers Inventory',
+          message : options.message || 'Retrieving data from farmers Inventory',
           status  : 200,
           data    : result
         });
@@ -36,11 +38,17 @@
   };
 
   exports.findOneById = function(options) {
-    return options.io[options.name]
-      .findById(options.find)
-      .exec()
+    return io[options.name]
+      .findById(options.find.toString())
+      .exec(function(err, result) {
+        return result;
+      })
       .then(function(result) {
-        return options.res.json(result);
+        options.res.json({
+          message : options.message,
+          status  : 200,
+          data    : result
+        });
       });
   };
 }());

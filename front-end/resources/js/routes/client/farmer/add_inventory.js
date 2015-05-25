@@ -16,6 +16,8 @@
 
     /*Function*/
     vm.add_item_link  = add_item_link;
+    vm.add_inventory  = add_inventory;
+    vm.item_details   = item_details;
     vm.log_info       = log_info;
 
     item_load();
@@ -43,12 +45,35 @@
         });
     }
 
+    function item_details(id) {
+      vm.id = id;
+      $q.all([item_detailsCallback(id)])
+        .then(function(response) {
+          console.log(response);
+          var obj     = response[0].data;
+          vm.quantity = obj.quantity;
+          vm.case     = obj.case;
+          vm.price    = obj.case;
+          vm.comments = obj.comments;
+        });
+    }
+
+    function item_detailsCallback(id) {
+      return commonsDataService
+        .httpGETRouteParams(
+          'farmer/inventory',
+          id,
+          {},
+          admin_users_service_api
+        ).then(function(response) {
+          return response;
+        });
+    }
+
     function log_info(event, date) {
       var dateSelected = date;
       if (event.type === 'click') {
         dateSelected = moment(date).format('YYYY-M-DD');
-        // user_dates_selected.push()
-        // var select = moment(date).format('YYYY-M-DD') + ' has been ' + (date.selected ? 'false' : 'true');
         var select = date.selected ? 'false' : 'true';
 
         if (select === 'true') {
@@ -60,35 +85,34 @@
     }
 
     function date_selected(date) {
-      console.log('date_selected');
       vm.user_dates_selected.push(date);
-      console.log(vm.user_dates_selected);
     }
 
     function date_unselected(date) {
-      console.log('date_unselected');
       var position = vm.user_dates_selected.indexOf(date);
       vm.user_dates_selected.splice(position, 1);
-      console.log(position);
     }
-    
 
-    function add_inventory_item() {
-      $q.all([add_inventory_itemCallback()])
+    function add_inventory() {
+      $q.all([add_inventoryCallback()])
         .then(function(response) {
-          strapModal.hide();
+          console.log(response);
         });
     }
 
-
-    function add_inventory_itemCallback() {
+    function add_inventoryCallback() {
       return commonsDataService
-        .httpPOSTQueryParams('farmer/inventory', {
-          variety_name  : vm.variety_name,
-          photo         : vm.photo_name,
-          product_type  :vm.product_type
-        }, admin_users_service_api)
-        .then(function(response) {
+        .httpPUTRouteParams('farmer/inventory',
+          vm.id,
+          { quantity          : vm.quantity,
+            case              : vm.case,
+            price             : vm.price,
+            dates             : vm.user_dates_selected,
+            attachments       : vm.attachments,
+            comments          : vm.comments
+          },
+          admin_users_service_api
+        ).then(function(response) {
           return response;
         });
     }

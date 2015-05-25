@@ -9,11 +9,27 @@
     variety_name      : String,
     photo             : String,
     product_type      : String,
-    quantity          : Number,
-    case              : Number,
-    price             : Number,
-    attachments       : String,
-    comments          : String
+    quantity          : {
+      type: Number,
+      default: 0
+    },
+    case              : {
+      type: Number,
+      default: 0
+    },
+    price             : {
+      type: Number,
+      default: 0
+    },
+    dates             : Array,
+    attachments       : {
+      type: String,
+      default: null
+    },
+    comments          : {
+      type: String,
+      default: null
+    }
   });
 
   module.exports = mongoose.model('Farmer_Inventory', Farmer_Inventory);
